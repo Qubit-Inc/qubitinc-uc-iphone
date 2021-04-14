@@ -58,7 +58,20 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (void)viewDidLoad {
-    isChecked = FALSE;
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"UserPreferredChoice"] == NULL) {
+        isChecked = TRUE;
+        [[NSUserDefaults standardUserDefaults] setObject:@"TRUE" forKey:@"UserPreferredChoice"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else {
+        NSString *value = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserPreferredChoice"];
+        if([value isEqual:@"TRUE"])
+            isChecked =  TRUE;
+        else
+            isChecked = FALSE;
+    }
+    
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.labelDataNotFound.text = @"";

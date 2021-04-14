@@ -285,15 +285,15 @@
                             </subviews>
                         </view>
                         <view tag="47" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mga-O5-mUn" userLabel="bottomBar">
-                            <rect key="frame" x="30" y="100" width="315" height="430"/>
+                            <rect key="frame" x="0.0" y="100" width="375" height="430"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <subviews>
                                 <view tag="48" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OIH-ek-VgL" userLabel="higherBar">
-                                    <rect key="frame" x="-1" y="0.0" width="316" height="106"/>
+                                    <rect key="frame" x="-1" y="0.0" width="376" height="106"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button hidden="YES" opaque="NO" tag="55" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zx-MI-pUL" userLabel="optionsButton" customClass="UIToggleButton">
-                                            <rect key="frame" x="406" y="0.0" width="75" height="106"/>
+                                            <rect key="frame" x="482" y="0.0" width="90" height="106"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Options"/>
                                             <inset key="titleEdgeInsets" minX="0.0" minY="38" maxX="0.0" maxY="0.0"/>
@@ -308,7 +308,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="59" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7u-65-OPV" userLabel="chatButton" customClass="UIIconButton">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="106"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Hangup"/>
                                             <state key="normal">
@@ -360,14 +360,14 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-IT-aPF" userLabel="Label chat">
-                                            <rect key="frame" x="0.0" y="85" width="105" height="15"/>
+                                            <rect key="frame" x="0.0" y="85" width="125" height="15"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="70" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-2a-CDI" userLabel="chatNotificationView" customClass="UIBouncingView">
-                                            <rect key="frame" x="99" y="0.0" width="18" height="63"/>
+                                            <rect key="frame" x="98" y="0.0" width="24" height="63"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="71" contentMode="scaleAspectFit" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="nPO-PM-4zJ" userLabel="chatNotificationImage">
@@ -388,7 +388,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7f5-7T-fV3" userLabel="callPauseButton" customClass="UIPauseButton">
-                                            <rect key="frame" x="105" y="0.0" width="104" height="106"/>
+                                            <rect key="frame" x="125" y="0.0" width="123" height="106"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Pause"/>
                                             <state key="normal">
@@ -440,14 +440,14 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-0N-sRS" userLabel="Label Pause">
-                                            <rect key="frame" x="105" y="85" width="104" height="15"/>
+                                            <rect key="frame" x="125" y="85" width="123" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRH-Ao-h65" userLabel="microButton" customClass="UIMutedMicroButton">
-                                            <rect key="frame" x="209" y="0.0" width="107" height="106"/>
+                                            <rect key="frame" x="248" y="0.0" width="128" height="106"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Micro"/>
                                             <state key="normal">
@@ -496,7 +496,7 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjL-b3-GC6" userLabel="Label Micro">
-                                            <rect key="frame" x="209" y="85" width="107" height="15"/>
+                                            <rect key="frame" x="248" y="85" width="128" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
@@ -506,11 +506,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgw-SG-3ga" userLabel="middle">
-                                    <rect key="frame" x="-1" y="106" width="316" height="109"/>
+                                    <rect key="frame" x="-1" y="106" width="376" height="108"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" tag="45" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reb-7F-UDV" userLabel="optionsAddButton">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="108"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Add call"/>
                                             <state key="normal">
@@ -550,14 +550,14 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Call" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpC-pc-k6o" userLabel="Label New">
-                                            <rect key="frame" x="0.0" y="85" width="105" height="15"/>
+                                            <rect key="frame" x="0.0" y="84" width="125" height="15"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="44" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06a-kv-hpZ" userLabel="optionConferenceButton" customClass="UIIconButton">
-                                            <rect key="frame" x="105" y="0.0" width="104" height="109"/>
+                                            <rect key="frame" x="125" y="0.0" width="123" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Start conference"/>
                                             <state key="normal">
@@ -596,14 +596,14 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuK-UY-jOx" userLabel="Label Conference">
-                                            <rect key="frame" x="105" y="85" width="104" height="15"/>
+                                            <rect key="frame" x="125" y="84" width="123" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="46" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-bn-1bs" userLabel="optionsTransferButton">
-                                            <rect key="frame" x="209" y="0.0" width="107" height="109"/>
+                                            <rect key="frame" x="248" y="0.0" width="128" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Transfer call"/>
                                             <state key="normal">
@@ -642,7 +642,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7p-V6-qLe" userLabel="Label Conference">
-                                            <rect key="frame" x="209" y="85" width="107" height="15"/>
+                                            <rect key="frame" x="248" y="84" width="128" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
@@ -652,11 +652,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view tag="56" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q9-3P-Fz0" userLabel="lowerBar">
-                                    <rect key="frame" x="-1" y="215" width="316" height="107"/>
+                                    <rect key="frame" x="-1" y="214" width="376" height="108"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" tag="50" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDb-mD-sWV" userLabel="videoButton" customClass="UIVideoButton">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="107"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="108"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Video"/>
                                             <state key="normal">
@@ -711,14 +711,14 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKN-Kf-td9" userLabel="Label Video">
-                                            <rect key="frame" x="0.0" y="85" width="105" height="15"/>
+                                            <rect key="frame" x="0.0" y="85" width="125" height="15"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="53" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5S-kV-7Kv" userLabel="speakerButton" customClass="UISpeakerButton">
-                                            <rect key="frame" x="209" y="0.0" width="107" height="107"/>
+                                            <rect key="frame" x="248" y="0.0" width="128" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Speaker"/>
                                             <state key="normal">
@@ -768,7 +768,7 @@
                                             </state>
                                         </button>
                                         <button hidden="YES" opaque="NO" tag="54" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQp-5y-kTy" userLabel="routesButton" customClass="UIToggleButton">
-                                            <rect key="frame" x="209" y="0.0" width="107" height="107"/>
+                                            <rect key="frame" x="248" y="0.0" width="128" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Route"/>
                                             <fontDescription key="fontDescription" name="Wingdings2" family="Wingdings 2" pointSize="34"/>
@@ -785,14 +785,14 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speaker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-I0-zK9" userLabel="Label Speaker">
-                                            <rect key="frame" x="209" y="85" width="107" height="15"/>
+                                            <rect key="frame" x="248" y="85" width="128" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tg-I7-Avu" userLabel="recordButtonOnView">
-                                            <rect key="frame" x="105" y="0.0" width="104" height="107"/>
+                                            <rect key="frame" x="125" y="0.0" width="123" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <state key="normal">
                                                 <attributedString key="attributedTitle">
@@ -809,7 +809,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="44" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAI-av-LMz" userLabel="recordButton" customClass="UIIconButton">
-                                            <rect key="frame" x="105" y="0.0" width="104" height="107"/>
+                                            <rect key="frame" x="125" y="0.0" width="123" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Start conference"/>
                                             <fontDescription key="fontDescription" name="Wingdings2" family="Wingdings 2" pointSize="34"/>
@@ -824,7 +824,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQa-ef-kI7" userLabel="Label Record">
-                                            <rect key="frame" x="105" y="85" width="104" height="15"/>
+                                            <rect key="frame" x="125" y="85" width="123" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
@@ -834,11 +834,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zGy-RX-Scc" userLabel="Disconnect">
-                                    <rect key="frame" x="-1" y="322" width="316" height="108"/>
+                                    <rect key="frame" x="-1" y="322" width="376" height="108"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" tag="58" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xpw-A4-BZO" userLabel="hangupButton" customClass="UIHangUpButton">
-                                            <rect key="frame" x="104" y="0.0" width="104" height="108"/>
+                                            <rect key="frame" x="124" y="0.0" width="123" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Hangup"/>
                                             <state key="normal">
@@ -872,14 +872,14 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="XFER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHn-n3-SqE">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="107"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="107"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PARK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-qs-NWk">
-                                            <rect key="frame" x="209" y="0.0" width="105" height="107"/>
+                                            <rect key="frame" x="248" y="0.0" width="125" height="107"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -889,7 +889,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <tableView clipsSubviews="YES" tag="23" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="106" userLabel="pausedCallsTableView">
                             <rect key="frame" x="0.0" y="4" width="375" height="50"/>
@@ -1835,7 +1835,7 @@
                                     <state key="normal" image="button:GQK-F8-oLr:image">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <state key="disabled" image="6DD322DE-70EE-4CA6-95DA-4E33E19FC029"/>
+                                    <state key="disabled" image="C96B0E5D-B215-4AC3-9B48-A2246B630397"/>
                                     <state key="highlighted" backgroundImage="color_E.png"/>
                                     <connections>
                                         <action selector="onRecordClick:" destination="-1" eventType="touchUpInside" id="IFO-tT-oog"/>
@@ -2017,7 +2017,7 @@
         </view>
     </objects>
     <resources>
-        <image name="6DD322DE-70EE-4CA6-95DA-4E33E19FC029" width="33" height="33">
+        <image name="C96B0E5D-B215-4AC3-9B48-A2246B630397" width="33" height="33">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBELDBkaHxQkKCkwMzZASElNUFUkbnVsbNYNDg8QERITFBUW
