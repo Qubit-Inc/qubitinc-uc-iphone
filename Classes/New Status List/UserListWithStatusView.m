@@ -91,6 +91,8 @@ static UICompositeViewDescription *compositeDescription = nil;
     userModelArray = [[NSMutableArray alloc]initWithArray:sharedDelegate.userModelArray];
     original = [[NSMutableArray alloc]initWithArray:sharedDelegate.userModelArray];
     
+    [self filterData];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -238,6 +240,20 @@ static UICompositeViewDescription *compositeDescription = nil;
 -(void)checkboxOptionChanged : (BOOL) checkedStatus {
     isChecked = checkedStatus;
     if(isChecked) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"TRUE" forKey:@"UserPreferredChoice"];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"UserPreferredChoice"];
+        
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self filterData];
+    
+}
+
+-(void)filterData {
+    if(isChecked) {
         NSString *status = @"Registered";
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF.status = %@", status];
         NSArray* filteredData = [original filteredArrayUsingPredicate:predicate];
@@ -310,7 +326,7 @@ static UICompositeViewDescription *compositeDescription = nil;
                     original = [[NSArray alloc] initWithArray:userModelArray];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.labelDataNotFound.text = @"";
-                        [self.tableView reloadData];
+                        [self filterData];
                     });
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
