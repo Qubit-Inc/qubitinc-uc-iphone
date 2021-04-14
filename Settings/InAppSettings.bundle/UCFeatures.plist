@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PreferenceSpecifiers</key>
+    <array>
+        
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>DND</string>
+            <key>Key</key>
+            <string>dnd</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        
+        <dict>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+            <key>DefaultValue</key>
+            <string></string>
+            <key>IASKTextAlignment</key>
+            <string>IASKUITextAlignmentRight</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>Key</key>
+            <string>call_forward</string>
+            <key>KeyboardType</key>
+            <string>Alphabet</string>
+            <key>Title</key>
+            <string>Call Forward</string>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>PlaceHolder</key>
+            <string>Enter call forward number</string>
+        </dict>
+        
+        <dict>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+            <key>DefaultValue</key>
+            <string></string>
+            <key>IASKTextAlignment</key>
+            <string>IASKUITextAlignmentRight</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>Key</key>
+            <string>follow_me</string>
+            <key>KeyboardType</key>
+            <string>Alphabet</string>
+            <key>Title</key>
+            <string>Follow Me</string>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>PlaceHolder</key>
+            <string>Enter follow me number</string>
+        </dict>
+        
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Dial Out Intercom</string>
+            <key>Key</key>
+            <string>dial_out_intercom</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Dial Out Local</string>
+            <key>Key</key>
+            <string>dial_out_local</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Dial Out STD</string>
+            <key>Key</key>
+            <string>dial_out_std</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Dial Out ISD</string>
+            <key>Key</key>
+            <string>dial_out_isd</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+            <key>DefaultValue</key>
+            <string></string>
+            <key>IASKTextAlignment</key>
+            <string>IASKUITextAlignmentRight</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>Key</key>
+            <string>video_conference_uri</string>
+            <key>KeyboardType</key>
+            <string>Alphabet</string>
+            <key>Title</key>
+            <string>Video Conference URI</string>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>PlaceHolder</key>
+            <string>Enter video conference uri</string>
+        </dict>
+    </array>
+</dict>
+</plist>
+

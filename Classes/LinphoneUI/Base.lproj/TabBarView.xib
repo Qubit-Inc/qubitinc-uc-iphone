@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarView">
+            <connections>
+                <outlet property="chatButton" destination="5" id="28"/>
+                <outlet property="chatNotificationLabel" destination="38" id="40"/>
+                <outlet property="chatNotificationView" destination="37" id="41"/>
+                <outlet property="contactsButton" destination="8" id="27"/>
+                <outlet property="dialerButton" destination="7" id="12"/>
+                <outlet property="historyButton" destination="lof-qu-Ho5" id="sjN-fL-DlM"/>
+                <outlet property="historyNotificationLabel" destination="34" id="35"/>
+                <outlet property="historyNotificationView" destination="32" id="36"/>
+                <outlet property="labelChats" destination="JCt-ZA-hQe" id="pc0-Kt-HVl"/>
+                <outlet property="labelContacts" destination="2Ts-95-3D7" id="8EA-7W-2mR"/>
+                <outlet property="labelHistory" destination="uDd-8m-LFc" id="wOJ-5l-pGh"/>
+                <outlet property="labelKeypad" destination="qhn-LI-qxz" id="VPp-B0-Gfr"/>
+                <outlet property="labelStatus" destination="DTQ-Jl-USX" id="MMY-YA-Nec"/>
+                <outlet property="landscapeView" destination="ni3-kk-RmM" id="gdj-Ib-y4f"/>
+                <outlet property="portraitView" destination="3" id="43"/>
+                <outlet property="selectedButtonImage" destination="eC3-Hw-cqQ" id="PFh-X5-jX7"/>
+                <outlet property="statusButton" destination="6" id="WPu-qf-MgU"/>
+                <outlet property="view" destination="3" id="14"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="StatusButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="-7" width="100" height="66"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="History"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.20505630969999999" green="0.46154510970000001" blue="0.67845886950000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="highlighted">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" white="0.50412403453480115" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="onStatusButtonClick:" destination="-1" eventType="touchUpInside" id="092-7H-f1P"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-Jl-USX" userLabel="Status Label">
+                    <rect key="frame" x="0.0" y="40" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lof-qu-Ho5" userLabel="historyButton" customClass="UIIconButton">
+                    <rect key="frame" x="100" y="-7" width="100" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="History"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <real key="NSStrokeWidth" value="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.2172798812" green="0.48489415650000001" blue="0.70983260869999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="highlighted">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="onHistoryClick:" destination="-1" eventType="touchUpInside" id="Ofe-ax-Dxn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDd-8m-LFc" userLabel="History Label">
+                    <rect key="frame" x="100" y="40" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="contactsButton" customClass="UIIconButton">
+                    <rect key="frame" x="200" y="-7" width="100" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Contacts"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.20918846129999999" green="0.4733347893" blue="0.69022387269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="highlighted">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="23"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ts-95-3D7" userLabel="Contact Label">
+                    <rect key="frame" x="200" y="40" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="dialerButton" customClass="UIIconButton">
+                    <rect key="frame" x="300" y="-7" width="100" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Dialer"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <real key="NSStrokeWidth" value="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="disabled" image="footer_dialer_disabled.png"/>
+                    <state key="selected">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.2386339009" green="0.53528940680000003" blue="0.78434532879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="highlighted">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="onDialerClick:" destination="-1" eventType="touchUpInside" id="24"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Keypad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-LI-qxz" userLabel="KeypadLabel">
+                    <rect key="frame" x="300" y="40" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="chatButton" customClass="UIIconButton">
+                    <rect key="frame" x="400" y="-7" width="100" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Chat"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="0.20505630969999999" green="0.46154510970000001" blue="0.67845886950000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="highlighted">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" white="0.49627344091455422" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="25" name="MaterialIcons-Regular"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="onChatClick:" destination="-1" eventType="touchUpInside" id="26"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCt-ZA-hQe" userLabel="KeypadLabel">
+                    <rect key="frame" x="400" y="40" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-Hw-cqQ" userLabel="selectedButtonImage">
+                    <rect key="frame" x="0.0" y="63" width="100" height="3"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </imageView>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37" userLabel="chatNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="394" y="0.0" width="32" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="chatNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="chatNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <accessibility key="accessibilityConfiguration" label="Missed message(s)">
+                                <accessibilityTraits key="traits" none="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32" userLabel="historyNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="148" y="0.0" width="27" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="historyNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <accessibility key="accessibilityConfiguration" label="Missed call(s)">
+                                <accessibilityTraits key="traits" none="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23921568630000001" green="0.53333333329999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="134.78260869565219" y="-31.473214285714285"/>
+        </view>
+        <view contentMode="scaleToFill" id="ni3-kk-RmM">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="588"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="V07-hP-Heu" userLabel="backgroundImage">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="588"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFB-rc-hny" userLabel="newButton" customClass="UIIconButton">
+                    <rect key="frame" x="-3" y="0.0" width="95" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="History"/>
+                    <state key="normal" image="footer_history_default.png"/>
+                    <state key="disabled" image="footer_history_disabled.png"/>
+                    <state key="highlighted" backgroundImage="color_A.png"/>
+                    <connections>
+                        <action selector="onStatusButtonClick:" destination="-1" eventType="touchUpInside" id="0Cu-65-Ilc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlj-lf-AGD" userLabel="historyButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="98" width="90" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="History"/>
+                    <state key="normal" image="footer_history_default.png"/>
+                    <state key="disabled" image="footer_history_disabled.png"/>
+                    <state key="highlighted" backgroundImage="color_A.png"/>
+                    <connections>
+                        <action selector="onHistoryClick:" destination="-1" eventType="touchUpInside" id="apg-Ia-q2O"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea1-DR-JeN" userLabel="contactsButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="196" width="90" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Contacts"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="footer_contacts_default.png"/>
+                    <state key="disabled" image="footer_contacts_disabled.png"/>
+                    <state key="selected">
+                        <color key="titleColor" red="0.76000285148620605" green="0.21515019237995148" blue="0.12376989424228668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="color_A.png"/>
+                    <connections>
+                        <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="Mha-05-jl6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leo-2i-huu" userLabel="dialerButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="294" width="90" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Dialer"/>
+                    <state key="normal" image="footer_dialer_default.png"/>
+                    <state key="disabled" image="footer_dialer_disabled.png"/>
+                    <state key="highlighted" backgroundImage="color_A.png"/>
+                    <connections>
+                        <action selector="onDialerClick:" destination="-1" eventType="touchUpInside" id="f7N-Mt-lPq"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-ca-vcU" userLabel="selectedButtonImage">
+                    <rect key="frame" x="0.0" y="290" width="3" height="110"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-jk-0kY" userLabel="historyNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="55" y="100" width="21" height="146"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="toi-dz-eTS" userLabel="historyNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-w3-nYr" userLabel="historyNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <accessibility key="accessibilityConfiguration" label="Missed call(s)">
+                                <accessibilityTraits key="traits" none="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-j0-yv4" userLabel="chatButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="390" width="90" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Chat"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="footer_chat_default.png"/>
+                    <state key="disabled" image="footer_chat_disabled.png"/>
+                    <state key="highlighted" backgroundImage="color_A.png"/>
+                    <connections>
+                        <action selector="onChatClick:" destination="-1" eventType="touchUpInside" id="B7q-6N-lWO"/>
+                    </connections>
+                </button>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djA-EL-HUt" userLabel="chatNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="55" y="392" width="21" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="EKN-Nr-bdt" userLabel="chatNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-ol-R0k" userLabel="chatNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <accessibility key="accessibilityConfiguration" label="Missed message(s)">
+                                <accessibilityTraits key="traits" none="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ayl-oe-jjb" userLabel="dialerButton" customClass="UIIconButton">
+                    <rect key="frame" x="-3" y="488" width="90" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Dialer"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" metaFont="system" size="40"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="disabled">
+                        <attributedString key="attributedTitle">
+                            <fragment content="">
+                                <attributes>
+                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="NSFont" metaFont="system" size="40"/>
+                                    <real key="NSKern" value="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops/>
+                                    </paragraphStyle>
+                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="voiceMailAction:" destination="-1" eventType="touchUpInside" id="MMl-dW-F8L"/>
+                    </connections>
+                </button>
+            </subviews>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1000.0000000000001" y="-15.401785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="color_A.png" width="50" height="50"/>
+        <image name="color_C.png" width="2" height="2"/>
+        <image name="footer_chat_default.png" width="44" height="44"/>
+        <image name="footer_chat_disabled.png" width="44" height="44"/>
+        <image name="footer_contacts_default.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="footer_contacts_disabled.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="footer_dialer_default.png" width="44" height="44"/>
+        <image name="footer_dialer_disabled.png" width="44" height="44"/>
+        <image name="footer_history_default.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="footer_history_disabled.png" width="47.200000762939453" height="47.200000762939453"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>108861424352-ljeu1kgq48p8q91ulvh5c023von5us2r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.108861424352-ljeu1kgq48p8q91ulvh5c023von5us2r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBH1zqL8294GQvDwScyJG4V4RAJF8B7YHI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>108861424352</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.coraltele.coraluc</string>
+	<key>PROJECT_ID</key>
+	<string>coraluc-de22f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>coraluc-de22f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:108861424352:ios:c21696d355f841ee784685</string>
+	<key>DATABASE_URL</key>
+	<string>https://coraluc-de22f.firebaseio.com</string>
+</dict>
+</plist>
