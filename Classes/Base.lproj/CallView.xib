@@ -1061,7 +1061,7 @@
                             </subviews>
                         </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WL9-n3-u29" userLabel="numpadView">
-                            <rect key="frame" x="30" y="70999" width="315" height="450"/>
+                            <rect key="frame" x="30" y="70" width="315" height="450"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97I-AX-fS2" userLabel="1" customClass="UIDigitButton">
@@ -1835,7 +1835,7 @@
                                     <state key="normal" image="button:GQK-F8-oLr:image">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <state key="disabled" image="C96B0E5D-B215-4AC3-9B48-A2246B630397"/>
+                                    <state key="disabled" image="8E92308E-3BE2-46C6-BEB1-B8B740CEE120"/>
                                     <state key="highlighted" backgroundImage="color_E.png"/>
                                     <connections>
                                         <action selector="onRecordClick:" destination="-1" eventType="touchUpInside" id="IFO-tT-oog"/>
@@ -2017,7 +2017,7 @@
         </view>
     </objects>
     <resources>
-        <image name="C96B0E5D-B215-4AC3-9B48-A2246B630397" width="33" height="33">
+        <image name="8E92308E-3BE2-46C6-BEB1-B8B740CEE120" width="33" height="33">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBELDBkaHxQkKCkwMzZASElNUFUkbnVsbNYNDg8QERITFBUW
