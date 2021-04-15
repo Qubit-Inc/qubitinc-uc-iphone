@@ -965,6 +965,7 @@ forLocalNotification:(UILocalNotification *)notification
                     
                     [SVProgressHUD dismiss];
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                        NSLog(@"Total contacts from Buddy list %lu", (unsigned long)_userModelArray.count);
                         for(UserStatusModel* model in _userModelArray) {
                             [self saveContact:model];
                         }
@@ -1010,7 +1011,7 @@ forLocalNotification:(UILocalNotification *)notification
         contact.firstName = statusModel.name.copy;
         [contact setSipAddress:statusModel.contact atIndex:0];
         [self saveData:contact];
-        NSLog(@"\nContacts Added:- %d \n", addContactCounter);
+        
     }
 }
 
@@ -1020,21 +1021,50 @@ forLocalNotification:(UILocalNotification *)notification
     }
     //PhoneMainView.instance.currentName = contact.displayName;
     // fix no sipaddresses in contact.friend
-    const MSList *sips = linphone_friend_get_addresses(contact.friend);
-    while (sips) {
-        linphone_friend_remove_address(contact.friend, sips->data);
-        sips = sips->next;
-    }
     
-    for (NSString *sipAddr in contact.sipAddresses) {
-        LinphoneAddress *addr = linphone_core_interpret_url(LC, sipAddr.UTF8String);
-        if (addr) {
-            linphone_friend_add_address(contact.friend, addr);
-            linphone_address_destroy(addr);
+    if(![self hasDuplicateContactOf:contact]){
+        const MSList *sips = linphone_friend_get_addresses(contact.friend);
+        while (sips) {
+            linphone_friend_remove_address(contact.friend, sips->data);
+            sips = sips->next;
         }
+        
+        for (NSString *sipAddr in contact.sipAddresses) {
+            LinphoneAddress *addr = linphone_core_interpret_url(LC, sipAddr.UTF8String);
+            if (addr) {
+                linphone_friend_add_address(contact.friend, addr);
+                linphone_address_destroy(addr);
+            }
+        }
+        [LinphoneManager.instance.fastAddressBook saveContact:contact];
+        NSLog(@"\nContact Added \n");
     }
-    [LinphoneManager.instance.fastAddressBook saveContact:contact];
+    else {
+        NSLog(@"Contact exists-----");
+    }
 }
 
+- (BOOL) hasDuplicateContactOf:(Contact*) contactToCheck{
+    CNContactStore *store = [[CNContactStore alloc] init];
+    NSArray *keysToFetch = @[
+        CNContactEmailAddressesKey, CNContactPhoneNumbersKey,
+        CNContactInstantMessageAddressesKey, CNInstantMessageAddressUsernameKey,
+        CNContactFamilyNameKey, CNContactGivenNameKey, CNContactPostalAddressesKey,
+        CNContactIdentifierKey, CNContactImageDataKey, CNContactNicknameKey
+    ];
+    CNMutableContact *mCNContact =
+    [[store unifiedContactWithIdentifier:contactToCheck.identifier keysToFetch:keysToFetch error:nil] mutableCopy];
+    if(mCNContact == NULL){
+        for(NSString *address in contactToCheck.sipAddresses){
+            NSString *name = [FastAddressBook normalizeSipURI:address];
+            if([LinphoneManager.instance.fastAddressBook.addressBookMap objectForKey:name]){
+                return TRUE;
+            }
+        }
+        return FALSE;
+    }else{
+        return FALSE;
+    }
+}
 
 @end
