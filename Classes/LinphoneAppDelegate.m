@@ -437,7 +437,7 @@
     NSDictionary *aps = [userInfo objectForKey:@"aps"];
     //NSString *loc_key = [aps objectForKey:@"loc-key"] ?: [[aps objectForKey:@"alert"] objectForKey:@"loc-key"];
     NSString *callId = [aps objectForKey:@"call-id"] ?: @"";
-    //linphone_core_refresh_registers(LC);
+    linphone_core_refresh_registers(LC);
     if([CallManager callKitEnabled]) {
         // Since ios13, a new Incoming call must be displayed when the callkit is enabled and app is in background.
         // Otherwise it will cause a crash.
