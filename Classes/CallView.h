@@ -139,6 +139,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *wxyzlabel;
 @property (weak, nonatomic) IBOutlet UILabel *plusLabel;
 
-
-
 @end

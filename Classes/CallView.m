@@ -99,6 +99,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 	[videoZoomHandler setup:_videoGroup];
 	_videoGroup.alpha = 0;
+    _videoCameraSwitch.alpha = 0;
 
 	[_videoCameraSwitch setPreview:_videoPreview];
 
@@ -580,6 +581,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 	}
 
 	[_videoGroup setAlpha:disabled ? 0 : 1];
+    _videoCameraSwitch.alpha = disabled ? 0 : 1;
 
 	[self hideControls:!disabled sender:nil];
 
@@ -1128,5 +1130,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 	} else {
 		[_chatNotificationView stopAnimating:appear];
 	}
+}
+- (IBAction)switchCameraAction:(UIButton *)sender {
 }
 @end
