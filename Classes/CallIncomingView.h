@@ -33,7 +33,7 @@
 
 @end
 
-@interface CallIncomingView : TPMultiLayoutViewController <UICompositeViewDelegate, BSDropDownDelegate> {
+@interface CallIncomingView : TPMultiLayoutViewController <UICompositeViewDelegate, BSDropDownDelegate, UITextFieldDelegate> {
 }
 
 @property(nonatomic) Boolean earlyMedia;

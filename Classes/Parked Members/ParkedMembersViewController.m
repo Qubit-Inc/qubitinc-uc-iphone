@@ -14,6 +14,7 @@
 
 
 @interface ParkedMembersViewController ()
+@property(nonatomic, strong)UIAlertAction *sendAction;
 
 @end
 
@@ -64,8 +65,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (IBAction)showDropDown:(UIButton *)sender {
     NSLog(@"Show dropdown");
+    NSArray *options = [[NSArray alloc] initWithObjects: @"Can't talk now. What's up?",@"I'll call you right back.", @"I'll call you later",@"Can't talk now. Call me later?",@"Write your own...", nil];
     
-    BSDropDown *ddView=[[BSDropDown alloc] initWithWidth:200 withHeightForEachRow:50 originPoint:sender.center withOptions:@[@"option 1",@"option 2",@"option 3",@"option 4",@"option 5"]];
+    BSDropDown *ddView=[[BSDropDown alloc] initWithWidth:250 withHeightForEachRow:50 originPoint:sender.frame.origin withOptions:options];
     ddView.delegate=self;
     if (@available(iOS 13.0, *)) {
         ddView.dropDownBGColor=[UIColor systemBackgroundColor];
@@ -73,7 +75,7 @@ static UICompositeViewDescription *compositeDescription = nil;
     } else {
         ddView.dropDownBGColor=[UIColor whiteColor];
         ddView.dropDownTextColor=[UIColor blackColor];
-    }    
+    }
     //    ddView.dropDownFont=[UIFont systemFontOfSize:13];
     [self.view addSubview:ddView];
 }
@@ -81,7 +83,57 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark - DropDown Delegate
 -(void)dropDownView:(UIView *)ddView AtIndex:(NSInteger)selectedIndex{
     
-    NSLog(@"selectedIndex: %li",(long)selectedIndex);    
+    NSLog(@"selectedIndex: %li",(long)selectedIndex);
+    NSArray *options = [[NSArray alloc] initWithObjects: @"Can't talk now. What's up?",@"I'll call you right back." @"I'll call you later",@"Can't talk now. Call me later?",@"Write your own...", nil];
+    
+    if(selectedIndex == 4) {
+        //show alert to write custom message
+        [self showCustomMessageAlert];
+        
+    }else
+        NSLog(@"Disconnect call");
+    
+    
+    
+}
+
+
+-(void)showCustomMessageAlert {
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @""
+                                                                              message: @""
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Write your own...";
+        if (@available(iOS 13.0, *)) {
+            textField.textColor = [UIColor labelColor];
+        } else {
+            // Fallback on earlier versions
+            textField.textColor = [UIColor blackColor];
+        }
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.delegate = self;
+    }];
+    
+     [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+    }]];
+    
+    self.sendAction = [UIAlertAction actionWithTitle:@"Send" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray * textfields = alertController.textFields;
+        UITextField * namefield = textfields[0];
+        NSLog(@"%@",namefield.text);
+    }];
+    [alertController addAction:self.sendAction];
+    self.sendAction.enabled = NO;
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+
+    NSString *finalString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    [self.sendAction setEnabled:(finalString.length >= 1)];
+    return YES;
 }
 
 @end

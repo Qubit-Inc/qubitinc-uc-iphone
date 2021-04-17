@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ParkedMembersViewController : UIViewController<UICompositeViewDelegate, BSDropDownDelegate>
+@interface ParkedMembersViewController : UIViewController<UICompositeViewDelegate, BSDropDownDelegate, UITextFieldDelegate>
 - (IBAction)showDropDown:(UIButton *)sender;
 
 - (IBAction)backAction:(UIButton *)sender;

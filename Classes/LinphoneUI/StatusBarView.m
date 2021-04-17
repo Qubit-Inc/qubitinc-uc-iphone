@@ -69,6 +69,11 @@
 										   selector:@selector(onCallEncryptionChanged:)
 											   name:kLinphoneCallEncryptionChanged
 											 object:nil];
+    
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(onDNDCallForwardOptionChanged:)
+                                               name: @"KDNDCallForwardUpdated"
+                                             object:nil];
 
 	// Update to default state
 	LinphoneProxyConfig *config = linphone_core_get_default_proxy_config(LC);
@@ -77,6 +82,28 @@
 	[self proxyConfigUpdate:config];
 	[self updateUI:linphone_core_get_calls_nb(LC)];
 	[self updateVoicemail];
+    
+    [self updateButtonStatus];
+   
+}
+
+
+-(void) updateButtonStatus {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"isDNDEnabled"] != NULL) {
+        NSString *value = [[NSUserDefaults standardUserDefaults] objectForKey:@"isDNDEnabled"];
+        if([value isEqual:@"TRUE"])
+            [self.dndButton setHidden:FALSE];
+        else
+            [self.dndButton setHidden:TRUE];
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"isCallForwardEnabled"] != NULL) {
+        NSString *value = [[NSUserDefaults standardUserDefaults] objectForKey:@"isCallForwardEnabled"];
+        if([value isEqual:@"TRUE"])
+            [self.forwardButton setHidden:FALSE];
+        else
+            [self.forwardButton setHidden:TRUE];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -127,6 +154,11 @@
 		(!linphone_call_get_authentication_token_verified(call))) {
 		[self onSecurityClick:nil];
 	}
+}
+
+- (void)onDNDCallForwardOptionChanged:(NSNotification *)notif {
+    NSLog(@"Updated setting for DND or Call forward");
+    [self updateButtonStatus];
 }
 
 - (void)notifyReceived:(NSNotification *)notif {

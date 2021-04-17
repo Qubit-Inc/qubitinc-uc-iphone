@@ -26,7 +26,7 @@
     
     float dropdownHeight = (height*options.count)+12;
     
-    CGRect frame=CGRectMake(originPoint.x, originPoint.y - dropdownHeight, width, dropdownHeight);
+    CGRect frame=CGRectMake([UIScreen mainScreen].bounds.size.width - width, originPoint.y - dropdownHeight, width, dropdownHeight);
     
     if (frame.origin.y+frame.size.height>[UIScreen mainScreen].bounds.size.height) {
         

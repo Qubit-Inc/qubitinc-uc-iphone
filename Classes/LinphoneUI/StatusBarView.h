@@ -40,6 +40,8 @@
 + (UIImage *)imageForState:(LinphoneRegistrationState)state;
 
 @property (weak, nonatomic) IBOutlet UIImageView *statusImage;
+@property (weak, nonatomic) IBOutlet UIButton *dndButton;
+@property (weak, nonatomic) IBOutlet UIButton *forwardButton;
 
 
 @end
