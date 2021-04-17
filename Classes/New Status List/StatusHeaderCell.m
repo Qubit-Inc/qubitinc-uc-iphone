@@ -29,6 +29,10 @@
     [self.checkButtonDelegate checkboxOptionChanged:TRUE];
 }
 
+- (IBAction)refreshAction:(UIButton *)sender {
+    [self.checkButtonDelegate refreshList:TRUE];
+}
+
 - (void) updateButton: (BOOL) isChecked {
     
     _buttonCheck.hidden = !isChecked;

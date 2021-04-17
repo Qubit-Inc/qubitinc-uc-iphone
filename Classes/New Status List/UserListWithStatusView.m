@@ -96,7 +96,6 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
     if([SVProgressHUD isVisible]) {
         [SVProgressHUD dismiss];
     }
@@ -249,7 +248,10 @@ static UICompositeViewDescription *compositeDescription = nil;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self filterData];
-    
+}
+
+-(void)refreshList : (BOOL) refreshList {
+    [self getContactStatus];
 }
 
 -(void)filterData {

@@ -37,6 +37,16 @@
                                 <action selector="backAction:" destination="-1" eventType="touchUpInside" id="oke-CQ-rb0"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHE-eo-8o0" userLabel="Refresh">
+                            <rect key="frame" x="364" y="17.5" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="hHE-eo-8o0" secondAttribute="height" multiplier="1:1" id="NTe-jw-THc"/>
+                            </constraints>
+                            <state key="normal" image="refresh_icon"/>
+                            <connections>
+                                <action selector="refreshAction:" destination="-1" eventType="touchUpInside" id="xXx-cP-D3l"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PARKED MEMBERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJh-S1-3UR" userLabel="titleLabel">
                             <rect key="frame" x="85.5" y="19" width="243" height="32.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
@@ -47,9 +57,12 @@
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="Oui-ud-Orn"/>
+                        <constraint firstItem="hHE-eo-8o0" firstAttribute="centerY" secondItem="4zf-vv-D0F" secondAttribute="centerY" id="PyM-vj-J8x"/>
                         <constraint firstAttribute="bottom" secondItem="PM7-Ag-Kzx" secondAttribute="bottom" id="T50-sf-eRk"/>
+                        <constraint firstAttribute="trailing" secondItem="hHE-eo-8o0" secondAttribute="trailing" constant="15" id="WkE-ie-0Bq"/>
                         <constraint firstItem="bJh-S1-3UR" firstAttribute="centerY" secondItem="4zf-vv-D0F" secondAttribute="centerY" id="cC7-oq-X9D"/>
                         <constraint firstItem="PM7-Ag-Kzx" firstAttribute="top" secondItem="4zf-vv-D0F" secondAttribute="top" id="lQG-k8-Wne"/>
+                        <constraint firstItem="hHE-eo-8o0" firstAttribute="height" secondItem="4zf-vv-D0F" secondAttribute="height" multiplier="0.5" id="mZ1-Xp-gXC"/>
                         <constraint firstItem="bJh-S1-3UR" firstAttribute="centerX" secondItem="4zf-vv-D0F" secondAttribute="centerX" id="nQH-yY-2wo"/>
                         <constraint firstItem="PM7-Ag-Kzx" firstAttribute="leading" secondItem="4zf-vv-D0F" secondAttribute="leading" id="wSV-KE-8Ji"/>
                     </constraints>
@@ -75,6 +88,7 @@
     <resources>
         <image name="back_default.png" width="38.400001525878906" height="35.200000762939453"/>
         <image name="back_disabled.png" width="38.400001525878906" height="35.200000762939453"/>
+        <image name="refresh_icon" width="48" height="48"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

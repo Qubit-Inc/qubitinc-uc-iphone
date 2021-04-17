@@ -63,6 +63,10 @@ static UICompositeViewDescription *compositeDescription = nil;
     [PhoneMainView.instance changeCurrentView:DialerView.compositeViewDescription];
 }
 
+- (IBAction)refreshAction:(UIButton *)sender {
+    NSLog(@"refresh parked list");
+}
+
 - (IBAction)showDropDown:(UIButton *)sender {
     NSLog(@"Show dropdown");
     NSArray *options = [[NSArray alloc] initWithObjects: @"Can't talk now. What's up?",@"I'll call you right back.", @"I'll call you later",@"Can't talk now. Call me later?",@"Write your own...", nil];

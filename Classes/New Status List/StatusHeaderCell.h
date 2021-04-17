@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol UpdateCheckButtonDelegate <NSObject>
 
 -(void)checkboxOptionChanged : (BOOL) checkedStatus;
+-(void)refreshList : (BOOL) refreshList;
+
 
 @end
 
@@ -24,9 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)uncheckAction:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldSearch;
 - (IBAction)checkAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
 
 - (void) updateButton: (BOOL) isChecked;
 
+- (IBAction)refreshAction:(UIButton *)sender;
 
 @end
 
