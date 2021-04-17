@@ -49,6 +49,7 @@
 
 + (UIViewController*) topMostController;
 - (void)getUserStatus:(BOOL)isRefresh;
+- (NSString *)getMacAddress;
 + (LinphoneAppDelegate *)appDelegate;
 - (NSString*) getEncryptedName :(NSString*) name;
 
