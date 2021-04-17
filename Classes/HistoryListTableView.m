@@ -260,12 +260,12 @@
     }
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  @"Call";
-}
+//-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return  @"Call";
+//}
 
--(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
-}
+//-(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+//}
 
 /*
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -279,35 +279,35 @@
 }
  */
 
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [tableView beginUpdates];
-        [self makeCall:tableView indexPath:indexPath];
-        /*	id log = [_sections objectForKey:_sortedDays[indexPath.section]][indexPath.row];
-         LinphoneCallLog *callLog = [log pointerValue];
-         MSList *count = linphone_call_log_get_user_data(callLog);
-         while (count) {
-         linphone_core_remove_call_log(LC, count->data);
-         count = count->next;
-         }
-         linphone_core_remove_call_log(LC, callLog);
-         linphone_call_log_unref(callLog);
-         [[_sections objectForKey:_sortedDays[indexPath.section]] removeObject:log];
-         if (((NSArray *)[_sections objectForKey:_sortedDays[indexPath.section]]).count == 0) {
-         [_sections removeObjectForKey:_sortedDays[indexPath.section]];
-         [_sortedDays removeObjectAtIndex:indexPath.section];
-         [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]
-         withRowAnimation:UITableViewRowAnimationFade];
-         }
-         
-         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-         withRowAnimation:UITableViewRowAnimationFade];
-         */
-        [tableView endUpdates];
-    }
-}
+//- (void)tableView:(UITableView *)tableView
+//commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+//forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        [tableView beginUpdates];
+//        [self makeCall:tableView indexPath:indexPath];
+//        /*	id log = [_sections objectForKey:_sortedDays[indexPath.section]][indexPath.row];
+//         LinphoneCallLog *callLog = [log pointerValue];
+//         MSList *count = linphone_call_log_get_user_data(callLog);
+//         while (count) {
+//         linphone_core_remove_call_log(LC, count->data);
+//         count = count->next;
+//         }
+//         linphone_core_remove_call_log(LC, callLog);
+//         linphone_call_log_unref(callLog);
+//         [[_sections objectForKey:_sortedDays[indexPath.section]] removeObject:log];
+//         if (((NSArray *)[_sections objectForKey:_sortedDays[indexPath.section]]).count == 0) {
+//         [_sections removeObjectForKey:_sortedDays[indexPath.section]];
+//         [_sortedDays removeObjectAtIndex:indexPath.section];
+//         [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]
+//         withRowAnimation:UITableViewRowAnimationFade];
+//         }
+//
+//         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+//         withRowAnimation:UITableViewRowAnimationFade];
+//         */
+//        [tableView endUpdates];
+//    }
+//}
 
 - (void)removeSelectionUsing:(void (^)(NSIndexPath *))remover {
     [super removeSelectionUsing:^(NSIndexPath *indexPath) {

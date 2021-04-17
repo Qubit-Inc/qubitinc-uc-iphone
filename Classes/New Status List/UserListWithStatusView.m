@@ -171,24 +171,25 @@ static UICompositeViewDescription *compositeDescription = nil;
         return  [userModelArray count];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
+
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return  @"Call";
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self makeCall:tableView indexPath:indexPath];
-    }
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return NO;
+//}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        [self makeCall:tableView indexPath:indexPath];
+//    }
+//}
 
-- (void) makeCall:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {    
-    LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:userModelArray[indexPath.row].contact];
-    [LinphoneManager.instance call:addr];
-}
+//- (void) makeCall:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+//    LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:userModelArray[indexPath.row].contact];
+//    [LinphoneManager.instance call:addr];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
