@@ -29,6 +29,7 @@
 #import "RecordingsListView.h"
 #import "VoiceMailViewController.h"
 #import "SideMenuCell.h"
+#import "ParkedMembersViewController.h"
 
 @implementation SideMenuEntry
 
@@ -125,9 +126,7 @@
         addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Parked Members", nil)
                                                  image:[UIImage imageNamed:@"voicemail.png"]
                                               tapBlock:^() {
-        
-        //TODO: Handle Parked members
-                                              
+                [PhoneMainView.instance changeCurrentView:ParkedMembersViewController.compositeViewDescription];
     }]];
     
     [_sideMenuEntries

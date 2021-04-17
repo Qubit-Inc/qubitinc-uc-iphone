@@ -143,8 +143,32 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 	[_delegate incomingCallDeclined:_call];
 }
 
+- (IBAction)declineWithMessage:(UIButton *)sender {
+    
+    NSArray *options = [[NSArray alloc] initWithObjects: @"I am busy",@"I will call you later",@"Can't talk now",@"option 4",@"option 5", nil];
+    
+    BSDropDown *ddView=[[BSDropDown alloc] initWithWidth:200 withHeightForEachRow:50 originPoint:sender.center withOptions:options];
+    ddView.delegate=self;
+    if (@available(iOS 13.0, *)) {
+        ddView.dropDownBGColor=[UIColor systemBackgroundColor];
+        ddView.dropDownTextColor=[UIColor labelColor];
+    } else {
+        ddView.dropDownBGColor=[UIColor whiteColor];
+        ddView.dropDownTextColor=[UIColor blackColor];
+    }
+    //    ddView.dropDownFont=[UIFont systemFontOfSize:13];
+    [self.view addSubview:ddView];
+}
+
 - (IBAction)onAcceptAudioOnlyClick:(id)sender {
 	[_delegate incomingCallAccepted:_call evenWithVideo:NO];
+}
+
+
+#pragma mark - DropDown Delegate
+-(void)dropDownView:(UIView *)ddView AtIndex:(NSInteger)selectedIndex{
+    NSLog(@"selectedIndex: %li",(long)selectedIndex);
+    [_delegate incomingCallDeclined:_call];
 }
 
 @end

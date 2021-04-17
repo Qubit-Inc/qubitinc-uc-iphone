@@ -23,6 +23,7 @@
 #import "TPMultiLayoutViewController.h"
 #import "UIRoundedImageView.h"
 #include "LinphoneManager.h"
+#import "BSDropDown.h"
 
 @protocol IncomingCallViewDelegate <NSObject>
 
@@ -32,7 +33,7 @@
 
 @end
 
-@interface CallIncomingView : TPMultiLayoutViewController <UICompositeViewDelegate> {
+@interface CallIncomingView : TPMultiLayoutViewController <UICompositeViewDelegate, BSDropDownDelegate> {
 }
 
 @property(nonatomic) Boolean earlyMedia;
@@ -50,5 +51,6 @@
 - (IBAction)onAcceptClick:(id)event;
 - (IBAction)onDeclineClick:(id)event;
 - (IBAction)onAcceptAudioOnlyClick:(id)sender;
+- (IBAction)declineWithMessage:(UIButton *)sender;
 
 @end
