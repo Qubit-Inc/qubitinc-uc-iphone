@@ -152,7 +152,10 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
     
     NSArray *options = [[NSArray alloc] initWithObjects: @"Can't talk now. What's up?", @"I'll call you right back.", @"I'll call you later", @"Can't talk now. Call me later?", @"Write your own...", nil];
     
-    BSDropDown *ddView=[[BSDropDown alloc] initWithWidth:250 withHeightForEachRow:50 originPoint:sender.center withOptions:options];
+    CGPoint origin =  CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - 60);
+
+    
+    BSDropDown *ddView=[[BSDropDown alloc] initWithWidth:250 withHeightForEachRow:50 originPoint:origin withOptions:options];
     ddView.delegate=self;
     if (@available(iOS 13.0, *)) {
         ddView.dropDownBGColor=[UIColor systemBackgroundColor];
@@ -208,6 +211,8 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
         NSArray * textfields = alertController.textFields;
         UITextField * namefield = textfields[0];
         NSLog(@"%@",namefield.text);
+        [_delegate incomingCallDeclined:_call];
+
     }];
     [alertController addAction:self.sendAction];
     self.sendAction.enabled = NO;
