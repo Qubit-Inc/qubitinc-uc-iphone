@@ -88,4 +88,7 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
 - (IBAction)onDeleteClick:(id)sender;
 - (IBAction)onEditionChangeClick:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIView *keyboardView;
+@property (weak, nonatomic) IBOutlet UIButton *dialButton;
+
 @end

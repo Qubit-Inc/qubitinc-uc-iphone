@@ -18,6 +18,7 @@
  */
 
 #import "PhoneMainView.h"
+#import "NumPadViewController.h"
 
 @implementation ContactSelection
 
@@ -117,6 +118,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 	
 	[tap setDelegate:self];
 	[self.view addGestureRecognizer:tap];
+    
+    NumPadViewController * dialerView = [[NumPadViewController alloc] initWithNibName:@"NumPadViewController" bundle:nil];
+    dialerView.view.frame = self.keyboardView.bounds;
+    [self.keyboardView addSubview:dialerView.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

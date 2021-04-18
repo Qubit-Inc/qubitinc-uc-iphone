@@ -105,6 +105,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     LOGI(@"%@", NSStringFromSelector(_cmd));
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"applicationDidBecomeActive" object:NULL];
+    
     if (!startedInBackground || PhoneMainView.instance.currentView == nil) {
         startedInBackground = TRUE;
         // initialize UI

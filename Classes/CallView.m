@@ -965,6 +965,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
         [_numpadButton setSelected:FALSE];
 		[self hidePad:TRUE animated:ANIMATED];
 	}
+    [self toggleControls:sender];
 }
 
 - (IBAction)onChatClick:(id)sender {

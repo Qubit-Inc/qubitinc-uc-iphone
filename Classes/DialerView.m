@@ -86,7 +86,7 @@ static UICompositeViewDescription *compositeDescription = nil;
             
             [_addContactButton setAttributedTitle:attrStr forState:UIControlStateNormal];
         
-            
+            [_padView setBackgroundColor:[UIColor blackColor]];
             //is dark
         }else{
             //is light
@@ -122,6 +122,7 @@ static UICompositeViewDescription *compositeDescription = nil;
             
             [_addContactButton setTitleColor:textColor forState:UIControlStateNormal];
      
+            [_padView setBackgroundColor:[UIColor whiteColor]];
         }
         
         NSDictionary *grayColorAttributes = @{ NSForegroundColorAttributeName : [UIColor grayColor] };
@@ -255,6 +256,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[_nineButton setDigit:'9'];
 	[_starButton setDigit:'*'];
 	[_hashButton setDigit:'#'];
+    
 
 	[_addressField setAdjustsFontSizeToFitWidth:TRUE]; // Not put it in IB: issue with placeholder size
 
@@ -282,6 +284,11 @@ static UICompositeViewDescription *compositeDescription = nil;
 			[_videoCameraSwitch setHidden:FALSE];
 		}
 	}
+    
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(darkmodeApplication)
+                                               name:@"applicationDidBecomeActive"
+                                             object:nil];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
