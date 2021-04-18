@@ -206,11 +206,33 @@
         }
         else if([key isEqualToString:@"dnd"]) {
             postParamKey = @"dnd";
+            
+            if([value isEqual:@"true"]) {
+                [[NSUserDefaults standardUserDefaults] setObject:@"TRUE" forKey:@"isDNDEnabled"];
+            }
+            else {
+                [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"isDNDEnabled"];
+            }
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            [NSNotificationCenter.defaultCenter postNotificationName:@"KDNDCallForwardUpdated" object:self userInfo:NULL];
+
         } else if([key isEqualToString:@"follow_me"]) {
             postParamKey = @"followme";
         }
         else if([key isEqualToString:@"call_forward"]) {
             postParamKey = @"callforward-always";
+            
+            
+            if(value.length > 0) {
+                [[NSUserDefaults standardUserDefaults] setObject:@"TRUE" forKey:@"isCallForwardEnabled"];
+            }
+            else {
+                [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"isCallForwardEnabled"];
+            }
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            [NSNotificationCenter.defaultCenter postNotificationName:@"KDNDCallForwardUpdated" object:self userInfo:NULL];
+
         }
         
         NSString *encryptedValue = [del getEncryptedName:[NSString stringWithFormat:@"%@", value]];

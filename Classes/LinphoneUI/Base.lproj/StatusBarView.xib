@@ -11,6 +11,8 @@
             <connections>
                 <outlet property="callQualityButton" destination="SKk-s0-5HE" id="22M-FN-kRs"/>
                 <outlet property="callSecurityButton" destination="27" id="29"/>
+                <outlet property="dndButton" destination="LVA-nk-n0u" id="Nw2-v9-7hs"/>
+                <outlet property="forwardButton" destination="Jo3-zZ-Wja" id="Po3-c1-iQy"/>
                 <outlet property="incallView" destination="0Vp-VF-wmX" id="mLI-RY-bfW"/>
                 <outlet property="outcallView" destination="lfO-I4-PXi" id="04e-SG-ViY"/>
                 <outlet property="registrationState" destination="Mhg-P6-RfU" id="xTR-Af-XBY"/>
@@ -97,6 +99,20 @@
                             <nil key="highlightedColor"/>
                             <size key="shadowOffset" width="-3" height="-1"/>
                         </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo3-zZ-Wja" userLabel="CallForwardButton">
+                            <rect key="frame" x="158" y="0.0" width="34" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            <state key="normal" title="FWD">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVA-nk-n0u" userLabel="DNDButton">
+                            <rect key="frame" x="119" y="0.0" width="33" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            <state key="normal" title="DND">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
                     </subviews>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhg-P6-RfU" userLabel="registrationState" customClass="UIIconButton">

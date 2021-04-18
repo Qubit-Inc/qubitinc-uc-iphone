@@ -73,6 +73,9 @@
 		24BFAAA9209B0630004F47A7 /* linphone_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BFAA9D209B0630004F47A7 /* linphone_logo@2x.png */; };
 		24E1C7C01F9A235600D3F981 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1C7B91F9A235500D3F981 /* Contacts.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		2E0D9DC7262AB5A8006F7BA0 /* ParkedMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D9DC5262AB5A8006F7BA0 /* ParkedMembersViewController.m */; };
+		2E0D9DC8262AB5A8006F7BA0 /* ParkedMembersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0D9DC6262AB5A8006F7BA0 /* ParkedMembersViewController.xib */; };
+		2E0D9DCE262ABA9C006F7BA0 /* BSDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D9DCD262ABA9C006F7BA0 /* BSDropDown.m */; };
 		2E3CF440256ACD8F007EF701 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E3CF43C256AC4C2007EF701 /* MaterialIcons-Regular.ttf */; };
 		2E7ED475256B002D0081F174 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E3CF43C256AC4C2007EF701 /* MaterialIcons-Regular.ttf */; };
 		2E7ED496256B69990081F174 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E7ED493256B69980081F174 /* Font Awesome 5 Free-Regular-400.otf */; };
@@ -950,6 +953,11 @@
 		24E1C7B91F9A235500D3F981 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2E0D9DC4262AB5A8006F7BA0 /* ParkedMembersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkedMembersViewController.h; sourceTree = "<group>"; };
+		2E0D9DC5262AB5A8006F7BA0 /* ParkedMembersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkedMembersViewController.m; sourceTree = "<group>"; };
+		2E0D9DC6262AB5A8006F7BA0 /* ParkedMembersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkedMembersViewController.xib; sourceTree = "<group>"; };
+		2E0D9DCC262ABA9C006F7BA0 /* BSDropDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSDropDown.h; sourceTree = "<group>"; };
+		2E0D9DCD262ABA9C006F7BA0 /* BSDropDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSDropDown.m; sourceTree = "<group>"; };
 		2E3CF43C256AC4C2007EF701 /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
 		2E7ED493256B69980081F174 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		2E7ED494256B69980081F174 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -2056,6 +2064,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2E0D9DD2262ABAB5006F7BA0 /* DropDown */,
+				2E0D9DC3262AB581006F7BA0 /* Parked Members */,
 				1A25B99225977CB2004F6090 /* Helpers */,
 				1AC4742E25628BA80091E688 /* AES */,
 				1B2E3D0F255E80D6000C6D9C /* Network Layer */,
@@ -2509,6 +2519,25 @@
 				307C85A7B357CDD1CDE04FAD /* Pods_sanchar.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E0D9DC3262AB581006F7BA0 /* Parked Members */ = {
+			isa = PBXGroup;
+			children = (
+				2E0D9DC4262AB5A8006F7BA0 /* ParkedMembersViewController.h */,
+				2E0D9DC5262AB5A8006F7BA0 /* ParkedMembersViewController.m */,
+				2E0D9DC6262AB5A8006F7BA0 /* ParkedMembersViewController.xib */,
+			);
+			path = "Parked Members";
+			sourceTree = "<group>";
+		};
+		2E0D9DD2262ABAB5006F7BA0 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				2E0D9DCC262ABA9C006F7BA0 /* BSDropDown.h */,
+				2E0D9DCD262ABA9C006F7BA0 /* BSDropDown.m */,
+			);
+			path = DropDown;
 			sourceTree = "<group>";
 		};
 		561D0FD932DE3595BE512375 /* Pods */ = {
@@ -3517,6 +3546,7 @@
 				633FEDC81D3CD5590014B822 /* call_missed.png in Resources */,
 				8CB2B8FA1F86229E0015CEE2 /* next_disabled.png in Resources */,
 				8CF25D961F9F336100BEA0C1 /* check_unselected.png in Resources */,
+				2E0D9DC8262AB5A8006F7BA0 /* ParkedMembersViewController.xib in Resources */,
 				8C300D9A1E40E0CC00728EF3 /* lime_ko.png in Resources */,
 				633FEE311D3CD5590014B822 /* color_I.png in Resources */,
 				633FEF1F1D3CD55A0014B822 /* presence_online@2x.png in Resources */,
@@ -4155,6 +4185,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-sanchar/Pods-sanchar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/SSDropDown/SSDropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${PODS_ROOT}/linphone-sdk/linphone-sdk/apple-darwin/Frameworks/bctoolbox-ios.framework",
 				"${PODS_ROOT}/linphone-sdk/linphone-sdk/apple-darwin/Frameworks/bctoolbox-tester.framework",
@@ -4180,6 +4211,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSDropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-ios.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-tester.framework",
@@ -4330,6 +4362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B81A0F1B57DA33009604A6 /* TPKeyboardAvoidingTableView.m in Sources */,
+				2E0D9DCE262ABA9C006F7BA0 /* BSDropDown.m in Sources */,
 				CF1DE92D210A0F5D00A0A97E /* UILinphoneAudioPlayer.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				6135761C240E81BB005304D4 /* UIInterfaceStyleButton.m in Sources */,
@@ -4436,6 +4469,7 @@
 				6346100F1B61409800548952 /* CallOutgoingView.m in Sources */,
 				D35860D615B549B500513429 /* Utils.m in Sources */,
 				D3F7998115BD32370018C273 /* TPMultiLayoutViewController.m in Sources */,
+				2E0D9DC7262AB5A8006F7BA0 /* ParkedMembersViewController.m in Sources */,
 				D3807FBF15C28940005BE9BC /* DCRoundSwitch.m in Sources */,
 				D3807FC115C28940005BE9BC /* DCRoundSwitchKnobLayer.m in Sources */,
 				61CCC3DF21933B580060EDEA /* UIDeviceCell.m in Sources */,
