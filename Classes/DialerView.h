@@ -82,7 +82,6 @@
 - (IBAction)onBackClick:(id)event;
 - (IBAction)onAddressChange:(id)sender;
 - (IBAction)onBackspaceClick:(id)sender;
-
 - (void)setAddress:(NSString *)address;
 
 @property (weak, nonatomic) IBOutlet UIButton *swipeButton;

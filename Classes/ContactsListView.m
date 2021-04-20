@@ -119,9 +119,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[tap setDelegate:self];
 	[self.view addGestureRecognizer:tap];
     
-    NumPadViewController * dialerView = [[NumPadViewController alloc] initWithNibName:@"NumPadViewController" bundle:nil];
-    dialerView.view.frame = self.keyboardView.bounds;
-    [self.keyboardView addSubview:dialerView.view];
+    //NumPadViewController * dialerView = [[NumPadViewController alloc] initWithNibName:@"NumPadViewController" bundle:nil];
+    //dialerView.view.frame = self.keyboardView.bounds;
+    _numpadView.frame = self.keyboardView.bounds;
+    [self.keyboardView addSubview:_numpadView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -317,5 +318,178 @@ static UICompositeViewDescription *compositeDescription = nil;
 {
 	return NO;
 }
+
+- (IBAction)onAddressChange:(UITextField *)sender {
+    [self addressChanged];
+}
+- (IBAction)onBackSpaceCLick:(UIButton *)sender {
+    if ([_addressField.text length] > 0) {
+        [_addressField setText:[_addressField.text substringToIndex:[_addressField.text length] - 1]];
+    }
+    [self addressChanged];
+}
+
+- (void)setAddress:(NSString *)address {
+    [_addressField setText:address];
+}
+
+- (IBAction)dialButtonAction:(UIButton *)sender {
+    [sender setSelected:!sender.isSelected];
+    
+    if(sender.isSelected) {
+        //show keyboardview
+        [self hideAnimation:FALSE forView:self.keyboardView completion:^(BOOL finished) {
+            
+        }];
+    }
+    else {
+        //Hide keyboardview
+        [self hideAnimation:TRUE forView:self.keyboardView completion:^(BOOL finished) {
+           
+        }];
+    }
+}
+
+
+- (void)hideAnimation:(BOOL)hidden forView:(UIView *)target completion:(void (^)(BOOL finished))completion {
+    if (hidden) {
+    int original_y = target.frame.origin.y;
+    CGRect newFrame = target.frame;
+    newFrame.origin.y = self.view.frame.size.height;
+    [UIView animateWithDuration:0.5
+        delay:0.0
+        options:UIViewAnimationOptionCurveEaseIn
+        animations:^{
+          target.frame = newFrame;
+        
+        CGRect newFrame = _dialButton.frame;
+        int original_y = self.view.frame.size.height - 70;
+        newFrame.origin.y = original_y;
+        _dialButton.frame = newFrame;
+        }
+        completion:^(BOOL finished) {
+          CGRect originFrame = target.frame;
+          originFrame.origin.y = original_y;
+          target.hidden = YES;
+          target.frame = originFrame;
+          if (completion)
+              completion(finished);
+        }];
+    } else {
+        CGRect frame = target.frame;
+        int original_y = frame.origin.y;
+        original_y = self.view.frame.size.height - frame.size.height;
+        target.frame = frame;
+        frame.origin.y = original_y;
+        target.hidden = NO;
+
+        [UIView animateWithDuration:0.5
+            delay:0.0
+            options:UIViewAnimationOptionCurveEaseOut
+            animations:^{
+              target.frame = frame;
+            
+            CGRect newFrame =  _dialButton.frame;
+            int original_y = self.keyboardView.frame.origin.y - 70;
+            newFrame.origin.y = original_y;
+            _dialButton.frame = newFrame;
+            
+            }
+            completion:^(BOOL finished) {
+              target.frame = frame; // in case application did not finish
+              if (completion)
+                  completion(finished);
+            }];
+    }
+}
+
+
+
+- (IBAction)callButtonAction:(UIButton *)sender {
+    NSString *address = _addressField.text;
+    if (address.length == 0) {
+        LinphoneCallLog *log = linphone_core_get_last_outgoing_call_log(LC);
+        if (log) {
+            const LinphoneAddress *to = linphone_call_log_get_to_address(log);
+            const char *domain = linphone_address_get_domain(to);
+            char *bis_address = NULL;
+            LinphoneProxyConfig *def_proxy = linphone_core_get_default_proxy_config(LC);
+
+            // if the 'to' address is on the default proxy, only present the username
+            if (def_proxy) {
+                const char *def_domain = linphone_proxy_config_get_domain(def_proxy);
+                if (def_domain && domain && !strcmp(domain, def_domain)) {
+                    bis_address = ms_strdup(linphone_address_get_username(to));
+                }
+            }
+            if (bis_address == NULL) {
+                bis_address = linphone_address_as_string_uri_only(to);
+            }
+            [_addressField setText:[NSString stringWithUTF8String:bis_address]];
+            ms_free(bis_address);
+            // return after filling the address, let the user confirm the call by pressing again
+            return;
+        }
+    }
+
+    if ([address length] > 0) {
+        LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:address];
+        [LinphoneManager.instance call:addr];
+        if (addr)
+            linphone_address_unref(addr);
+    }
+}
+
+- (IBAction)addContactButonAction:(UIButton *)sender {
+    [ContactSelection setSelectionMode:ContactSelectionModeEdit];
+    [ContactSelection setAddAddress:[_addressField text]];
+    [ContactSelection setSipFilter:nil];
+    [ContactSelection setNameOrEmailFilter:nil];
+    [ContactSelection enableEmailFilter:FALSE];
+    [PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
+}
+
+- (IBAction)hashClick:(UIButton *)sender {
+    NSString *address = [NSString stringWithFormat:@"%@#", _addressField.text];
+    [_addressField setText: address];
+    [self addressChanged];
+}
+
+- (IBAction)startClick:(UIButton *)sender {
+    NSString *address = [NSString stringWithFormat:@"%@*", _addressField.text];
+    [_addressField setText: address];
+    [self addressChanged];
+}
+
+- (IBAction)digitClicked:(UIButton *)sender {
+    NSString *address = [NSString stringWithFormat:@"%@%ld", _addressField.text, sender.tag];
+    [_addressField setText: address];
+    [self addressChanged];
+}
+
+
+-(void)addressChanged {
+    _addContactButton.enabled = _backspaceButton.enabled = ([[_addressField text] length] > 0);
+    _callButton.enabled = _addContactButton.enabled;
+    if ([_addressField.text length] == 0) {
+        [self.view endEditing:YES];
+    }
+    
+    [self filterContacts];
+}
+
+
+-(void)filterContacts {
+    
+    NSString *searchText = _addressField.text;
+    [ContactSelection setSipFilter:searchText];
+    if (searchText.length == 0) {
+        [LinphoneManager.instance setContactsUpdated:TRUE];
+        [tableController loadData];
+    } else {
+        [tableController loadSIpFilteredData];
+    }
+}
+
 
 @end

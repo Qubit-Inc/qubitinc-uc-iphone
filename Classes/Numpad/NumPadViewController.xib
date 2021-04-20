@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DialerView">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NumPadViewController">
             <connections>
                 <outlet property="abcLabel" destination="CSG-gd-LVS" id="oLK-en-t65"/>
                 <outlet property="addContactButton" destination="222" id="225"/>

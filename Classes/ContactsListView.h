@@ -22,6 +22,7 @@
 #import "UICompositeView.h"
 #import "ContactsListTableView.h"
 #import "UIInterfaceStyleButton.h"
+#import "UIDigitButton.h"
 
 typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionModeEdit } ContactSelectionMode;
 
@@ -90,5 +91,41 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardView;
 @property (weak, nonatomic) IBOutlet UIButton *dialButton;
+
+
+
+
+//NUM pad outlets
+@property (strong, nonatomic) IBOutlet UIView *numpadView;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property(nonatomic, strong) IBOutlet UIDigitButton *oneButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *twoButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *threeButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *fourButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *fiveButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *sixButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *sevenButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *eightButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *nineButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *starButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *zeroButton;
+@property(nonatomic, strong) IBOutlet UIDigitButton *hashButton;
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
+@property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
+@property (weak, nonatomic) IBOutlet UIButton *addContactButton;
+
+
+
+- (IBAction)onAddressChange:(UITextField *)sender;
+- (IBAction)onBackSpaceCLick:(UIButton *)sender;
+
+- (IBAction)digitClicked:(UIButton *)sender;
+- (IBAction)startClick:(UIButton *)sender;
+- (IBAction)hashClick:(UIButton *)sender;
+- (IBAction)addContactButonAction:(UIButton *)sender;
+- (IBAction)callButtonAction:(UIButton *)sender;
+- (IBAction)dialButtonAction:(UIButton *)sender;
+
+- (void)setAddress:(NSString *)address;
 
 @end

@@ -19,10 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NumPadViewController
     : TPMultiLayoutViewController <UITextFieldDelegate, UICompositeViewDelegate> {
 }
-
+/*
 @property (weak, nonatomic) IBOutlet UIView *numberView;
-
-
 @property(nonatomic, strong) IBOutlet UITextField *addressField;
 @property(nonatomic, strong) IBOutlet UIButton *addContactButton;
 @property(nonatomic, strong) IBOutlet UICallButton *callButton;
@@ -68,6 +66,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *swipeButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *swipeButtonAction;
+*/
+
+- (IBAction)testAction:(id)sender;
+
 
 @end
 

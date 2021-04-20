@@ -32,5 +32,6 @@
 - (void)loadData;
 - (void)loadSearchedData;
 - (void)removeAllContacts;
+- (void)loadSIpFilteredData;
 
 @end

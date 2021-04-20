@@ -35,27 +35,27 @@
 - (IBAction)onBackClick:(id)event {
     
 }
-- (IBAction)onAddressChange:(id)sender{
-//    if ([self displayDebugPopup:_addressField.text]) {
-//        _addressField.text = @"";
+//- (IBAction)onAddressChange:(id)sender{
+////    if ([self displayDebugPopup:_addressField.text]) {
+////        _addressField.text = @"";
+////    }
+//    _addContactButton.enabled = _backspaceButton.enabled = ([[_addressField text] length] > 0);
+//    _callButton.enabled = _addContactButton.enabled;
+//    if ([_addressField.text length] == 0) {
+//        [self.view endEditing:YES];
 //    }
-    _addContactButton.enabled = _backspaceButton.enabled = ([[_addressField text] length] > 0);
-    _callButton.enabled = _addContactButton.enabled;
-    if ([_addressField.text length] == 0) {
-        [self.view endEditing:YES];
-    }
-    
-}
-- (IBAction)onBackspaceClick:(id)sender {
-    
-    if ([_addressField.text length] > 0) {
-        [_addressField setText:[_addressField.text substringToIndex:[_addressField.text length] - 1]];
-    }
-}
-
-- (void)setAddress:(NSString *)address {
-    [_addressField setText:address];
-}
+//
+//}
+//- (IBAction)onBackspaceClick:(id)sender {
+//
+//    if ([_addressField.text length] > 0) {
+//        [_addressField setText:[_addressField.text substringToIndex:[_addressField.text length] - 1]];
+//    }
+//}
+//
+//- (void)setAddress:(NSString *)address {
+//    [_addressField setText:address];
+//}
 
 #pragma mark - UITextFieldDelegate Functions
 
@@ -66,17 +66,20 @@
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == _addressField) {
-        [_addressField resignFirstResponder];
-    }
-    if (textField.text.length > 0) {
-        LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:textField.text];
-        [LinphoneManager.instance call:addr];
-        if (addr)
-            linphone_address_destroy(addr);
-    }
-    return YES;
-}
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+//    if (textField == _addressField) {
+//        [_addressField resignFirstResponder];
+//    }
+//    if (textField.text.length > 0) {
+//        LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:textField.text];
+//        [LinphoneManager.instance call:addr];
+//        if (addr)
+//            linphone_address_destroy(addr);
+//    }
+//    return YES;
+//}
 
+- (IBAction)testAction:(id)sender {
+    NSLog(@"Test action");
+}
 @end
