@@ -25,6 +25,7 @@
 static ContactSelectionMode sSelectionMode = ContactSelectionModeNone;
 static NSString *sAddAddress = nil;
 static NSString *sSipFilter = nil;
+static BOOL sIdentifierFilter = FALSE;
 static BOOL sEnableEmailFilter = FALSE;
 static NSString *sNameOrEmailFilter;
 static BOOL addAddressFromOthers = FALSE;
@@ -62,6 +63,14 @@ static BOOL addAddressFromOthers = FALSE;
 	return sEnableEmailFilter;
 }
 
++ (void)setIdentifierFilter:(BOOL)enable {
+    sIdentifierFilter = enable;
+}
+
++ (BOOL)getIdentifierFilter {
+    return sIdentifierFilter;
+}
+
 + (void)setNameOrEmailFilter:(NSString *)fuzzyName {
 	sNameOrEmailFilter = fuzzyName;
 }
@@ -80,7 +89,7 @@ static BOOL addAddressFromOthers = FALSE;
 @synthesize addButton;
 @synthesize topBar;
 
-typedef enum { ContactsAll, ContactsLinphone, ContactsMAX } ContactsCategory;
+typedef enum { ContactsAll, ContactsLinphone, ContactsMAX, ContactFavourite } ContactsCategory;
 
 #pragma mark - UICompositeViewDelegate Functions
 
@@ -202,8 +211,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 		frame.origin.x = allButton.frame.origin.x;
 		[ContactSelection setSipFilter:nil];
 		[ContactSelection enableEmailFilter:FALSE];
+        [ContactSelection setIdentifierFilter:FALSE];
 		allButton.selected = TRUE;
 		linphoneButton.selected = FALSE;
+        _favouriteButton.selected = FALSE;
 		[tableController loadData];
 	} else if (view == ContactsLinphone && !linphoneButton.selected) {
 		//REQUIRED TO RELOAD WITH FILTER
@@ -211,10 +222,25 @@ static UICompositeViewDescription *compositeDescription = nil;
 		frame.origin.x = linphoneButton.frame.origin.x;
 		[ContactSelection setSipFilter:LinphoneManager.instance.contactFilter];
 		[ContactSelection enableEmailFilter:FALSE];
+        [ContactSelection setIdentifierFilter:FALSE];
 		linphoneButton.selected = TRUE;
 		allButton.selected = FALSE;
+        _favouriteButton.selected = FALSE;
 		[tableController loadData];
-	}
+    } else if (view == ContactFavourite && !_favouriteButton.selected) {
+        //Filter contacts here
+        frame.origin.x = _favouriteButton.frame.origin.x;
+        linphoneButton.selected = FALSE;
+        allButton.selected = FALSE;
+        _favouriteButton.selected = TRUE;
+        
+        [LinphoneManager.instance setContactsUpdated:TRUE];
+        [ContactSelection setSipFilter:nil];
+        [ContactSelection enableEmailFilter:FALSE];
+        [ContactSelection setIdentifierFilter:TRUE];
+        [ContactSelection getIdentifierFilter];
+        [tableController loadData];
+    }
 	_selectedButtonImage.frame = frame;
 	if ([LinphoneManager.instance lpConfigBoolForKey:@"hide_linphone_contacts" inSection:@"app"]) {
 		allButton.selected = FALSE;
@@ -327,6 +353,10 @@ static UICompositeViewDescription *compositeDescription = nil;
         [_addressField setText:[_addressField.text substringToIndex:[_addressField.text length] - 1]];
     }
     [self addressChanged];
+}
+
+- (IBAction)onFavouriteAction:(UIButton *)sender {
+    [self changeView:ContactFavourite];
 }
 
 - (void)setAddress:(NSString *)address {

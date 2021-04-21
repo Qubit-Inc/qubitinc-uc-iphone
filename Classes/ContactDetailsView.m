@@ -511,6 +511,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[LinphoneManager.instance setContactsUpdated:TRUE];
 		[self setEditing:FALSE];
 		if(![self hasDuplicateContactOf:_contact]){
+           // _contact.identifier = @"New";
+            _contact.added = TRUE;
 			[self saveData];
 			_isAdding = FALSE;
 			self.tmpContact = NULL;

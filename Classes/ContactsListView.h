@@ -57,6 +57,9 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
  */
 + (BOOL)emailFilterEnabled;
 
+
++ (BOOL)getIdentifierFilter;
+
 /*!
  * Filters contacts by name and/or email fuzzy matching pattern.
  * @param fuzzyName fuzzy word to match. Use nil to disable it.
@@ -127,5 +130,7 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
 - (IBAction)dialButtonAction:(UIButton *)sender;
 
 - (void)setAddress:(NSString *)address;
+- (IBAction)onFavouriteAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
 
 @end

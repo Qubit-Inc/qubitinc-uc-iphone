@@ -166,26 +166,37 @@ static int ms_strcmpfuz(const char *fuzzy_word, const char *sentence) {
                     contact = [LinphoneManager.instance.fastAddressBook.addressBookMap objectForKey:addr];
                 }
                 BOOL add = true;
-                // Do not add the contact directly if we set some filter
-                if ([ContactSelection getSipFilter] ||
-                    [ContactSelection emailFilterEnabled]) {
-                    add = false;
-                }
-                if ([FastAddressBook contactHasValidSipDomain:contact]) {
-                    add = true;
-                }else if (contact.friend &&
-                          linphone_presence_model_get_basic_status(
-                                                                   linphone_friend_get_presence_model(
-                                                                                                      contact.friend)) ==
-                          LinphonePresenceBasicStatusOpen) {
-                    add = true;
-                }
                 
-                if (!add && [ContactSelection emailFilterEnabled]) {
-                    // Add this contact if it has an email
-                    add = (contact.emails.count > 0);
+                if([ContactSelection getIdentifierFilter]) {
+                    NSLog(@"%@ --- %@", contact.added, contact.displayName);
+                    if ([contact.displayName isEqualToString:@"well4"]) {
+                        add = true;
+                    }
+                    else {
+                        add = false;
+                    }
+                }else {
+                    
+                    // Do not add the contact directly if we set some filter
+                    if ([ContactSelection getSipFilter] ||
+                        [ContactSelection emailFilterEnabled]) {
+                        add = false;
+                    }
+                    if ([FastAddressBook contactHasValidSipDomain:contact]) {
+                        add = true;
+                    }else if (contact.friend &&
+                              linphone_presence_model_get_basic_status(
+                                                                       linphone_friend_get_presence_model(
+                                                                                                          contact.friend)) ==
+                              LinphonePresenceBasicStatusOpen) {
+                        add = true;
+                    }
+                    
+                    if (!add && [ContactSelection emailFilterEnabled]) {
+                        // Add this contact if it has an email
+                        add = (contact.emails.count > 0);
+                    }
                 }
-                
                 NSMutableString *name = [[NSMutableString alloc] initWithString: [self displayNameForContact:contact]];
                 if (add && name != nil) {
                     NSString *firstChar = [[name substringToIndex:1] uppercaseString];
