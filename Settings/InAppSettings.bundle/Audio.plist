@@ -4,7 +4,7 @@
 <dict>
     <key>PreferenceSpecifiers</key>
     <array>
-        <!--
+        
         <dict>
             <key>Title</key>
             <string>Codecs</string>
@@ -102,8 +102,6 @@
             <string>PSToggleSwitchSpecifier</string>
         </dict>
         
-        -->
-        <!--
         <dict>
             <key>New item</key>
             <string></string>
@@ -116,8 +114,7 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
         </dict>
-        -->
-        <!--
+       
         <dict>
             <key>DefaultValue</key>
             <true/>
@@ -138,8 +135,7 @@
             <key>DefaultValue</key>
             <string>NO</string>
         </dict>
-        -->
-        <!--
+       
         <dict>
             <key>DefaultValue</key>
             <false/>
@@ -150,10 +146,7 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
         </dict>
-        -->
         
-        
-        <!--
         <dict>
             <key>DefaultValue</key>
             <false/>
@@ -164,8 +157,7 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
         </dict>
-        -->
-        <!--
+       
         <dict>
             <key>DefaultValue</key>
             <false/>
@@ -176,8 +168,7 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
         </dict>
-        -->
-        <!--
+       
         <dict>
             <key>DefaultValue</key>
             <false/>
@@ -188,7 +179,6 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
         </dict>
-        -->
         
         <dict>
             <key>DefaultValue</key>
@@ -231,7 +221,7 @@
             <key>DefaultValue</key>
             <false/>
         </dict>
-        <!--
+        
         <dict>
             <key>Key</key>
             <string>audio_advanced_group</string>
@@ -240,7 +230,7 @@
             <key>Type</key>
             <string>PSGroupSpecifier</string>
         </dict>
-        -->
+        
         <dict>
             <key>Key</key>
             <string>playback_gain_preference</string>
@@ -269,7 +259,7 @@
             <key>IASKTextAlignment</key>
             <string>IASKUITextAlignmentRight</string>
         </dict>
-        <!--
+        
         <dict>
             <key>DefaultValue</key>
             <integer>36</integer>
@@ -318,7 +308,6 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
         </dict>
-        -->
     </array>
 </dict>
 </plist>
