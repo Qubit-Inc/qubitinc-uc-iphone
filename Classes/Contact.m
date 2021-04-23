@@ -136,8 +136,14 @@
 - (NSString *)displayName {
 	if (_friend) {
 		const char *friend_name = linphone_friend_get_name(_friend);
-		if (friend_name)
-			return [NSString stringWithUTF8String:friend_name];
+        if (friend_name){
+            NSString *name = [NSString stringWithUTF8String:friend_name];
+            if ([name containsString:@"__NEW__"]) {
+                NSLog(@"%@", name);
+                name = [name stringByReplacingOccurrencesOfString:@"__NEW__" withString:@""];
+            }
+            return name;
+        }
 	}
 
 	if (_person) {
@@ -164,9 +170,17 @@
 			str = [_firstName copy];
 			if (lastName)
 				[str appendFormat:@" %@", _lastName];
+            
+            if ([str containsString:@"__NEW__"]) {
+                str = [NSMutableString stringWithFormat:@"%@", [str stringByReplacingOccurrencesOfString:@"__NEW__" withString:@""]];
+            }
+
 			return str;
 		}
 		str = [_lastName copy];
+        if ([str containsString:@"__NEW__"]) {
+            str = [NSMutableString stringWithFormat:@"%@", [str stringByReplacingOccurrencesOfString:@"__NEW__" withString:@""]];
+        }
 		return str;
 	}
 

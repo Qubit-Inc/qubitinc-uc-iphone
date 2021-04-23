@@ -168,8 +168,8 @@ static int ms_strcmpfuz(const char *fuzzy_word, const char *sentence) {
                 BOOL add = true;
                 
                 if([ContactSelection getIdentifierFilter]) {
-                    NSLog(@"%@ --- %@", contact.added, contact.displayName);
-                    if ([contact.displayName isEqualToString:@"well4"]) {
+                    NSLog(@"--- %@", contact.lastName);
+                    if ([contact.lastName containsString:@"__NEW__"]) {
                         add = true;
                     }
                     else {

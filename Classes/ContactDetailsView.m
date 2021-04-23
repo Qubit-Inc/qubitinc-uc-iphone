@@ -512,6 +512,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[self setEditing:FALSE];
 		if(![self hasDuplicateContactOf:_contact]){
            // _contact.identifier = @"New";
+            _contact.lastName = [NSString stringWithFormat:@"%@%@", _contact.lastName, @"__NEW__"];
             _contact.added = TRUE;
 			[self saveData];
 			_isAdding = FALSE;
