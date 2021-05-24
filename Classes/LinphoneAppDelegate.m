@@ -917,7 +917,7 @@ forLocalNotification:(UILocalNotification *)notification
         NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
         [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
         return UIInterfaceOrientationMaskPortrait;
-    } else return UIInterfaceOrientationMaskAllButUpsideDown;
+    } else return UIInterfaceOrientationMaskPortrait;
 }
 
 + (UIViewController*) topMostController

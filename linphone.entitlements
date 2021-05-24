@@ -22,9 +22,9 @@
 	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.coraltele.sanchar</string>
-		<string>group.com.coraltele.sanchar.linphoneExtension</string>
-		<string>group.com.coraltele.sanchar.msgNotificationContent</string>
+		<string>group.com.coraltele.uc</string>
+		<string>group.com.coraltele.uc.linphoneExtension</string>
+		<string>group.com.coraltele.uc.msgNotificationContent</string>
 	</array>
 </dict>
 </plist>

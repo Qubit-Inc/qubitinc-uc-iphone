@@ -255,32 +255,42 @@ static RootViewManager *rootViewManagerInstance = nil;
 - (NSUInteger)supportedInterfaceOrientations
 #endif
 {
-	return UIInterfaceOrientationMaskAll;
+	return UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 								duration:(NSTimeInterval)duration {
 	if (toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
 		return;
+    
+    UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
 
-	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	[mainViewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	[self orientationUpdate:toInterfaceOrientation];
+	[super willRotateToInterfaceOrientation:orientation duration:duration];
+	[mainViewController willRotateToInterfaceOrientation:orientation duration:duration];
+	[self orientationUpdate:orientation];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 										 duration:(NSTimeInterval)duration {
 	if (toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
 		return;
+    
+    UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
 
-	[super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	[mainViewController willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+	[super willAnimateRotationToInterfaceOrientation:orientation duration:duration];
+	[mainViewController willAnimateRotationToInterfaceOrientation:orientation duration:duration];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-	[mainViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    
+    UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
+
+    
+	[super didRotateFromInterfaceOrientation:orientation];
+	[mainViewController didRotateFromInterfaceOrientation:orientation];
 }
+
 
 - (UIInterfaceOrientation)interfaceOrientation {
 	return [mainViewController currentOrientation];

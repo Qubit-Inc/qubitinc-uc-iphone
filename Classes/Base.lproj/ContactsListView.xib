@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,23 +15,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsListView">
             <connections>
+                <outlet property="abcLabel" destination="Dke-Pl-WkD" id="woN-g6-8hP"/>
                 <outlet property="addButton" destination="6" id="91"/>
                 <outlet property="addContactButton" destination="USi-jb-ZlZ" id="dnj-ls-zDN"/>
                 <outlet property="addressField" destination="X8y-F2-zSA" id="wAl-vD-6f4"/>
                 <outlet property="allButton" destination="4" id="27"/>
                 <outlet property="backspaceButton" destination="2dK-ow-RFr" id="ikz-sm-Gy5"/>
                 <outlet property="callButton" destination="Ysi-Sy-hyc" id="Odv-Fi-Cuf"/>
+                <outlet property="defLabel" destination="QiM-if-ukg" id="pxs-lm-uSe"/>
                 <outlet property="dialButton" destination="kl2-xW-2Hm" id="wPO-Gz-Se6"/>
                 <outlet property="eightButton" destination="c18-te-hXV" id="Lzt-0p-aQM"/>
                 <outlet property="favouriteButton" destination="IZR-S0-EY0" id="GSV-zb-y2u"/>
                 <outlet property="fiveButton" destination="3UP-cT-LhP" id="nFr-93-J7z"/>
                 <outlet property="fourButton" destination="ci9-8I-klR" id="zTL-te-XU6"/>
+                <outlet property="ghiLabel" destination="INd-cf-rke" id="1wf-42-RZ7"/>
                 <outlet property="hashButton" destination="scg-w9-sqw" id="XZT-SS-H6l"/>
+                <outlet property="jklLabel" destination="bX3-OH-GBG" id="rIu-fM-q7q"/>
                 <outlet property="keyboardView" destination="8lC-XO-KgH" id="gXg-xc-hhT"/>
                 <outlet property="linphoneButton" destination="5" id="31"/>
+                <outlet property="mnoLabel" destination="mvt-54-7np" id="j5X-CO-zmX"/>
                 <outlet property="nineButton" destination="SXv-4h-Kw1" id="b94-sP-tfY"/>
                 <outlet property="numpadView" destination="FKg-dZ-8Ah" id="fRk-3m-h5p"/>
                 <outlet property="oneButton" destination="DcB-sj-TOe" id="KNz-VK-d62"/>
+                <outlet property="plusLabel" destination="oBY-uf-B7b" id="clP-FQ-fgc"/>
+                <outlet property="pqrsLabel" destination="9GY-n1-C7v" id="wWj-an-pm5"/>
                 <outlet property="searchBar" destination="5jE-oF-d45" id="xfS-xo-2Bm"/>
                 <outlet property="selectedButtonImage" destination="A9k-KU-Dlm" id="4dX-pd-Y2D"/>
                 <outlet property="sevenButton" destination="hWw-7y-RkG" id="Jt6-Ny-10p"/>
@@ -41,8 +48,10 @@
                 <outlet property="threeButton" destination="GEA-ZT-1fg" id="Rpa-Mv-HeX"/>
                 <outlet property="toggleSelectionButton" destination="5lZ-u7-Yex" id="ULR-WM-Yuo"/>
                 <outlet property="topBar" destination="3" id="w1O-2o-b18"/>
+                <outlet property="tuvLabel" destination="ben-gQ-6Vr" id="DBU-tM-fz5"/>
                 <outlet property="twoButton" destination="D1q-bj-GAx" id="D9z-vu-jtG"/>
                 <outlet property="view" destination="2" id="16"/>
+                <outlet property="wxyzlabel" destination="ND3-dF-1ef" id="BM6-5q-6sx"/>
                 <outlet property="zeroButton" destination="H4w-x9-mqS" id="geS-JF-9YT"/>
             </connections>
         </placeholder>

@@ -194,11 +194,107 @@ static UICompositeViewDescription *compositeDescription = nil;
 		addAddressFromOthers = FALSE;
 		[PhoneMainView.instance presentViewController:infoView animated:YES completion:nil];
 	}
+    
+    [self darkmodeApplication];
 }
+
+
 
 - (void) viewWillDisappear:(BOOL)animated {
 	self.view = NULL;
 	[self.tableController removeAllContacts];
+}
+
+
+- (void) darkmodeApplication {
+    
+    if (@available(iOS 12.0, *)) {
+        if( self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ){
+            [_oneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_twoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_threeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_fourButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_fiveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_sixButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_sevenButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_eightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_nineButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_zeroButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+           // [_swipeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_callButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_hashButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_starButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            //_numberView.backgroundColor = [UIColor blackColor];
+            //_swipeButton.backgroundColor = [UIColor blackColor];
+            _addContactButton.backgroundColor = [UIColor blackColor];
+            _callButton.backgroundColor = [UIColor blackColor];
+            
+            UIColor *textColor = [UIColor whiteColor];
+            [_abcLabel setTextColor: textColor];
+            [_defLabel setTextColor: textColor];
+            [_ghiLabel setTextColor: textColor];
+            [_jklLabel setTextColor: textColor];
+            [_mnoLabel setTextColor: textColor];
+            [_pqrsLabel setTextColor: textColor];
+            [_tuvLabel setTextColor: textColor];
+            [_wxyzlabel setTextColor: textColor];
+            [_plusLabel setTextColor: textColor];
+            
+
+            NSDictionary *attributes = @{ NSForegroundColorAttributeName : textColor };
+            NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:_addContactButton.titleLabel.text  attributes:attributes];
+            
+            [_addContactButton setAttributedTitle:attrStr forState:UIControlStateNormal];
+        
+            //[_padView setBackgroundColor:[UIColor blackColor]];
+            //is dark
+        }else{
+            //is light
+            [_oneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_twoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_threeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_fourButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_fiveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_sixButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_sevenButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_eightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_nineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_zeroButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            //[_swipeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_hashButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_callButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_starButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            
+            //_swipeButton.backgroundColor = [UIColor whiteColor];
+            _addContactButton.backgroundColor = [UIColor whiteColor];
+            _callButton.backgroundColor = [UIColor whiteColor];
+            
+            UIColor *textColor = [UIColor blackColor];
+            [_abcLabel setTextColor: textColor];
+            [_defLabel setTextColor: textColor];
+            [_ghiLabel setTextColor: textColor];
+            [_jklLabel setTextColor: textColor];
+            [_mnoLabel setTextColor: textColor];
+            [_pqrsLabel setTextColor: textColor];
+            [_tuvLabel setTextColor: textColor];
+            [_wxyzlabel setTextColor: textColor];
+            [_plusLabel setTextColor: textColor];
+            
+            
+            [_addContactButton setTitleColor:textColor forState:UIControlStateNormal];
+     
+           // [_padView setBackgroundColor:[UIColor whiteColor]];
+        }
+        
+        NSDictionary *grayColorAttributes = @{ NSForegroundColorAttributeName : [UIColor grayColor] };
+        NSAttributedString *conferenceAttrStr = [[NSAttributedString alloc] initWithString:_addContactButton.titleLabel.text  attributes:grayColorAttributes];
+        [_addContactButton setAttributedTitle:conferenceAttrStr forState:UIControlStateDisabled];
+        
+        //[self setAttributedButtonHighlightColor:_addContactButton];
+        
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 #pragma mark -

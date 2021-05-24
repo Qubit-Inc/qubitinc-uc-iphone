@@ -119,6 +119,22 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
 
 
 
+@property (weak, nonatomic) IBOutlet UILabel *abcLabel;
+@property (weak, nonatomic) IBOutlet UILabel *defLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *ghiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jklLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mnoLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *pqrsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tuvLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *wxyzlabel;
+@property (weak, nonatomic) IBOutlet UILabel *plusLabel;
+
+
+
+
 - (IBAction)onAddressChange:(UITextField *)sender;
 - (IBAction)onBackSpaceCLick:(UIButton *)sender;
 

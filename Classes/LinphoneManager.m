@@ -75,7 +75,7 @@ NSString *const kLinphoneFileTransferRecvUpdate = @"LinphoneFileTransferRecvUpda
 NSString *const kLinphoneQRCodeFound = @"LinphoneQRCodeFound";
 NSString *const kLinphoneChatCreateViewChange = @"LinphoneChatCreateViewChange";
 
-NSString *const kLinphoneMsgNotificationAppGroupId = @"group.com.coraltele.sanchar.msgNotificationContent";
+NSString *const kLinphoneMsgNotificationAppGroupId = @"group.com.coraltele.uc.msgNotificationContent";
 
 const int kLinphoneAudioVbrCodecDefaultBitrate = 36; /*you can override this from linphonerc or linphonerc-factory*/
 
