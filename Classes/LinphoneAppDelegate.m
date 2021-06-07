@@ -1023,7 +1023,7 @@ forLocalNotification:(UILocalNotification *)notification
         NSString *encryptedUserName = [self getEncryptedName:[NSString stringWithFormat:@"%s", userName]];
         NSString *path = [NSString stringWithFormat:@"getstatuslist/%@", encryptedUserName];
         [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-        [SVProgressHUD show];
+        [SVProgressHUD showWithStatus:@"Loading... \n This may take sometime."];
         [sharedManager callGetApi:path parameters:param :^(id  _Nonnull response, NSError * _Nonnull error) {
             _userModelArray = [NSMutableArray new];
             if (error == nil){
@@ -1038,15 +1038,14 @@ forLocalNotification:(UILocalNotification *)notification
                         [_userModelArray addObject:model];
                     }
                     
-                    [SVProgressHUD dismiss];
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                        [SVProgressHUD dismiss];
                         NSLog(@"Total contacts from Buddy list %lu", (unsigned long)_userModelArray.count);
                         for(UserStatusModel* model in _userModelArray) {
-                            [self saveContact:model];
+                            //[self saveContact:model];
                         }
+                        
                     });
-                    
-                    
                 } else {
                     [SVProgressHUD dismiss];
                     NSLog(@"Failed to get User status Data:-- %@", error);
@@ -1085,6 +1084,7 @@ forLocalNotification:(UILocalNotification *)notification
         
         contact.firstName = statusModel.name.copy;
         [contact setSipAddress:statusModel.contact atIndex:0];
+        [contact setPhoneNumber:statusModel.contact atIndex:0];
         [self saveData:contact];
         
     }
@@ -1097,7 +1097,7 @@ forLocalNotification:(UILocalNotification *)notification
     //PhoneMainView.instance.currentName = contact.displayName;
     // fix no sipaddresses in contact.friend
     
-    if(![self hasDuplicateContactOf:contact]){
+    if(![self hasDuplicateContactOf:contact]) {
         const MSList *sips = linphone_friend_get_addresses(contact.friend);
         while (sips) {
             linphone_friend_remove_address(contact.friend, sips->data);
@@ -1127,8 +1127,12 @@ forLocalNotification:(UILocalNotification *)notification
         CNContactFamilyNameKey, CNContactGivenNameKey, CNContactPostalAddressesKey,
         CNContactIdentifierKey, CNContactImageDataKey, CNContactNicknameKey
     ];
+  
+    //NSLog(@"Total Contacts:- %@",[store containersMatchingPredicate:nil error:nil]);
+    
     CNMutableContact *mCNContact =
     [[store unifiedContactWithIdentifier:contactToCheck.identifier keysToFetch:keysToFetch error:nil] mutableCopy];
+    
     if(mCNContact == NULL){
         for(NSString *address in contactToCheck.sipAddresses){
             NSString *name = [FastAddressBook normalizeSipURI:address];

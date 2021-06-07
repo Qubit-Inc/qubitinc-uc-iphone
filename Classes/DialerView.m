@@ -499,6 +499,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 	//[_callButton updateIcon];
 }
 
+- (IBAction)onCallButtonClick:(UIButton *)sender {
+    
+}
+
 - (void)setAddress:(NSString *)address {
 	[_addressField setText:address];
 }
@@ -554,7 +558,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		_addressField.text = @"";
 	}
 	_addContactButton.enabled = _backspaceButton.enabled = ([[_addressField text] length] > 0);
-    _callButton.enabled = _addContactButton.enabled;
+   // _callButton.enabled = _addContactButton.enabled;
     if ([_addressField.text length] == 0) {
         [self.view endEditing:YES];
     }
