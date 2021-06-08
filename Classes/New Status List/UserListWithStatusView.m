@@ -24,6 +24,8 @@
     UISearchController* searchController;
     BOOL isChecked;
     
+    NSMutableDictionary *callLogsList;
+    
 }
 
 @property (nonatomic, strong) UISearchController *searchController;
@@ -57,6 +59,27 @@ static UICompositeViewDescription *compositeDescription = nil;
     return self.class.compositeViewDescription;
 }
 
+- (void)loadData {
+    
+   callLogsList = [[NSMutableDictionary alloc]init];
+    
+    const bctbx_list_t *logs = linphone_core_get_call_logs(LC);
+    while (logs != NULL) {
+        LinphoneCallLog *log = (LinphoneCallLog *)logs->data;
+        logs = bctbx_list_next(logs);
+        const LinphoneAddress *addr = linphone_call_log_get_to_address(log);
+        Contact *contact = [FastAddressBook getContactWithAddress:addr];
+        if(contact != nil)
+            [callLogsList setObject:[NSValue valueWithPointer:linphone_call_log_ref(log)] forKey:contact.sipAddresses.firstObject];
+        else{
+            NSString *name = [FastAddressBook displayNameForAddress:addr];
+            [callLogsList setObject:[NSValue valueWithPointer:linphone_call_log_ref(log)] forKey:name];
+        }
+            
+        //[callLogsList addObject:[NSValue valueWithPointer:linphone_call_log_ref(log)]];
+    }
+}
+
 - (void)viewDidLoad {
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"UserPreferredChoice"] == NULL) {
@@ -81,6 +104,7 @@ static UICompositeViewDescription *compositeDescription = nil;
     
     UINib *headerNib = [UINib nibWithNibName:@"StatusHeaderCell" bundle:nil];
     [_tableView registerNib:headerNib forCellReuseIdentifier:@"StatusHeaderCell"];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,7 +116,7 @@ static UICompositeViewDescription *compositeDescription = nil;
     original = [[NSMutableArray alloc]initWithArray:sharedDelegate.userModelArray];
     
     [self filterData];
-    
+    [self loadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -198,7 +222,50 @@ static UICompositeViewDescription *compositeDescription = nil;
     NSString *userNameWithContactID = [NSString stringWithFormat: @"%@ %@", model.name, model.contact];
     [cell.labelUserName setText:userNameWithContactID];
     [cell.labelStatusColor setBackgroundColor: [self convertHextoUIColor:model.statusColorHex]];
+    cell.detailsButton.tag = indexPath.row;
+    [cell.detailsButton addTarget:self action:@selector(detailAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     return  cell;
+    
+}
+
+- (void) detailAction : (UIButton*) sender {
+    UserStatusModel *model = userModelArray[sender.tag];
+    NSLog(@"%@", model.contact);
+    
+    id logId = [callLogsList objectForKey:model.contact];
+//    if(logId == nil)
+//        logId = [callLogsList objectForKey:model.name];
+    
+    
+        
+    if(logId != nil){
+        HistoryDetailsView *view = VIEW(HistoryDetailsView);
+        //HistoryDetailsView* view =[[HistoryDetailsView alloc] initWithNibName:@"HistoryDetailsView" bundle:nil];
+        LinphoneCallLog *callLog = [logId pointerValue];
+        if (linphone_call_log_get_call_id(callLog) != NULL) {
+            // Go to History details view
+            [view setCallLogId:[NSString stringWithUTF8String:linphone_call_log_get_call_id(callLog)]];
+        }
+        [PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+        //[self.navigationController pushViewController:view animated:TRUE];
+        
+
+    }
+    else {
+        //[view setCallLogId: @""];
+        ContactDetailsView *view = VIEW(ContactDetailsView);
+       // ContactDetailsView* view =[[ContactDetailsView alloc] initWithNibName:@"ContactDetailsView" bundle:nil];
+
+        CNContact *cnContact = [[CNContact alloc] init];
+        Contact* contact = [[Contact alloc] initWithCNContact:cnContact];
+        [contact setSipAddress:model.contact atIndex:0];
+        [view setContact:contact];
+        //[self.navigationController pushViewController:view.compositeViewDescription animated:TRUE];
+        [PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+        //[self.navigationController pushViewController:view animated:TRUE];
+
+    }
     
 }
 

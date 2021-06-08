@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *labelStatusColor;
 @property (weak, nonatomic) IBOutlet UILabel *labelUserName;
+@property (weak, nonatomic) IBOutlet UIIconButton *detailsButton;
 
 @end
 

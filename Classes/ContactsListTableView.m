@@ -540,7 +540,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
                                 onCancelClick:nil
                           onConfirmationClick:^() {
             [tableView beginUpdates];
-            
             NSString *firstChar = [addressBookMap keyAtIndex:[indexPath section]];
             NSMutableArray *subAr = [addressBookMap objectForKey:firstChar];
             Contact *contact = subAr[indexPath.row];
