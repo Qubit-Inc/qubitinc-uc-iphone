@@ -1051,6 +1051,10 @@ forLocalNotification:(UILocalNotification *)notification
                     NSLog(@"Failed to get User status Data:-- %@", error);
                 }
             }
+            else {
+                NSLog(@"Error from API-- %@", error.localizedDescription);
+                [SVProgressHUD dismiss];
+            }
         }];
     }
     

@@ -134,7 +134,52 @@ static UICompositeViewDescription *compositeDescription = nil;
     } else {
         // Fallback on earlier versions
     }
+    
+  
 }
+
+-(void) adjustButtonLabelsSize {
+    CGFloat size = _oneButton.frame.size.width / 5;
+    [self setButttonsFontSize:_oneButton size: size];
+    [self setButttonsFontSize: _twoButton size: size];
+    [self setButttonsFontSize: _threeButton size: size];
+    [self setButttonsFontSize: _fourButton size: size];
+    [self setButttonsFontSize:_fiveButton size: size];
+    [self setButttonsFontSize: _sixButton size: size];
+    [self setButttonsFontSize: _sevenButton size: size];
+    [self setButttonsFontSize: _eightButton size: size];
+    [self setButttonsFontSize:_nineButton size: size];
+    [self setButttonsFontSize: _starButton size: size * 1.3];
+    [self setButttonsFontSize: _zeroButton size: size];
+    [self setButttonsFontSize: _callButton size: size];
+    [self setButttonsFontSize: _swipeButton size: size * 0.9];
+    [self setButttonsFontSize: _hashButton size: size];
+    
+    _addressField.font = [UIFont systemFontOfSize: _oneButton.frame.size.width / 5];
+    [self adjustLabelLabelsSize];
+   
+}
+
+-(void) adjustLabelLabelsSize {
+    CGFloat labelFontSize = _abcLabel.frame.size.width / 30;
+
+    _abcLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _defLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _ghiLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _jklLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _mnoLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _pqrsLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _tuvLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _wxyzlabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _plusLabel.font = [UIFont systemFontOfSize:labelFontSize * 1.3];
+}
+
+
+-(void) setButttonsFontSize:(UIButton*) button size:(CGFloat) size {
+    //CGFloat size = button.frame.size.width / 5;
+    [button.titleLabel setFont: [button.titleLabel.font fontWithSize: size]];
+}
+
 
 - (void)setAttributedButtonHighlightColor:(UIButton*) button {
     
@@ -196,45 +241,44 @@ static UICompositeViewDescription *compositeDescription = nil;
 		linphone_core_enable_video_preview(LC, FALSE);
 	}
 	[_addressField setText:@""];
-    [self setFontSize];
-    
-    NSLog(@"Button Size: %f",_fiveButton.frame.size.height);
+    //[self setFontSize];
+    [self adjustButtonLabelsSize];
+    [self darkmodeApplication];
 }
 
-- (void)setFontSize{
-
-    double buttonFontSize = _fiveButton.frame.size.height * 0.3;
-    _oneButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _twoButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _threeButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _fiveButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _fourButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _sixButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _sevenButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _eightButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _nineButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _starButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize * 1.7];
-    _zeroButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    _hashButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
-    
-    
-    _callButton.titleLabel.font = [UIFont fontWithName:@"Wingdings" size:buttonFontSize * 1.7];
-    _swipeButton.titleLabel.font = [UIFont fontWithName:@"Wingdings3" size:buttonFontSize * 1.7];
-    
-    _addressField.font = [UIFont systemFontOfSize:buttonFontSize * 1.3];
-    
-    double labelFontSize = (_fiveButton.frame.size.height * 0.3) * 0.32;
-
-    _abcLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _defLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _ghiLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _jklLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _mnoLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _pqrsLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _tuvLabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _wxyzlabel.font = [UIFont systemFontOfSize:labelFontSize];
-    _plusLabel.font = [UIFont systemFontOfSize:labelFontSize];
-}
+//- (void)setFontSize{
+//
+//    double buttonFontSize = _fiveButton.frame.size.height * 0.3;
+//    _oneButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _twoButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _threeButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _fiveButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _fourButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _sixButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _sevenButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _eightButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _nineButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _starButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize * 1.7];
+//    _zeroButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//    _hashButton.titleLabel.font = [UIFont systemFontOfSize:buttonFontSize];
+//
+//
+//    _callButton.titleLabel.font = [UIFont fontWithName:@"Wingdings" size:buttonFontSize * 1.7];
+//    _swipeButton.titleLabel.font = [UIFont fontWithName:@"Wingdings3" size:buttonFontSize * 1.7];
+//
+//    _addressField.font = [UIFont systemFontOfSize:buttonFontSize * 1.3];
+//
+//    double labelFontSize = (_fiveButton.frame.size.height * 0.3) * 0.32;
+//    _abcLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _defLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _ghiLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _jklLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _mnoLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _pqrsLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _tuvLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _wxyzlabel.font = [UIFont systemFontOfSize:labelFontSize];
+//    _plusLabel.font = [UIFont systemFontOfSize:labelFontSize];
+//}
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];

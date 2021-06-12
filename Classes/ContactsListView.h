@@ -116,6 +116,7 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
 @property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
 @property (weak, nonatomic) IBOutlet UIButton *addContactButton;
+@property (weak, nonatomic) IBOutlet UIButton *swipeButton;
 
 
 

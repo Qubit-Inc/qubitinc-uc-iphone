@@ -254,9 +254,9 @@ static UICompositeViewDescription *compositeDescription = nil;
     }
     else {
         //[view setCallLogId: @""];
-        ContactDetailsView *view = VIEW(ContactDetailsView);
-       // ContactDetailsView* view =[[ContactDetailsView alloc] initWithNibName:@"ContactDetailsView" bundle:nil];
-
+        //ContactDetailsView *view = VIEW(ContactDetailsView);
+        ContactDetailsView* view =[[ContactDetailsView alloc] initWithNibName:@"ContactDetailsView" bundle:nil];
+        
         CNContact *cnContact = [[CNContact alloc] init];
         Contact* contact = [[Contact alloc] initWithCNContact:cnContact];
         [contact setSipAddress:model.contact atIndex:0];
@@ -264,6 +264,7 @@ static UICompositeViewDescription *compositeDescription = nil;
         //[self.navigationController pushViewController:view.compositeViewDescription animated:TRUE];
         [PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
         //[self.navigationController pushViewController:view animated:TRUE];
+       // [[self navigationController] pushViewController:view animated:TRUE];
 
     }
     

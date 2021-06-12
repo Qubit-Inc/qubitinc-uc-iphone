@@ -158,6 +158,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 		self.linphoneButton.hidden = TRUE;
 		self.selectedButtonImage.hidden = TRUE;
 	}
+    [self adjustButtonLabelsSize];
+    [self darkmodeApplication];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -220,12 +222,12 @@ static UICompositeViewDescription *compositeDescription = nil;
             [_eightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_nineButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_zeroButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-           // [_swipeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_swipeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_callButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_hashButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_starButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             //_numberView.backgroundColor = [UIColor blackColor];
-            //_swipeButton.backgroundColor = [UIColor blackColor];
+            _swipeButton.backgroundColor = [UIColor blackColor];
             _addContactButton.backgroundColor = [UIColor blackColor];
             _callButton.backgroundColor = [UIColor blackColor];
             
@@ -260,12 +262,12 @@ static UICompositeViewDescription *compositeDescription = nil;
             [_eightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_nineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_zeroButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            //[_swipeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_swipeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_hashButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_callButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_starButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             
-            //_swipeButton.backgroundColor = [UIColor whiteColor];
+            _swipeButton.backgroundColor = [UIColor whiteColor];
             _addContactButton.backgroundColor = [UIColor whiteColor];
             _callButton.backgroundColor = [UIColor whiteColor];
             
@@ -296,6 +298,50 @@ static UICompositeViewDescription *compositeDescription = nil;
         // Fallback on earlier versions
     }
 }
+
+-(void) adjustButtonLabelsSize {
+    CGFloat size = _oneButton.frame.size.width / 4.5;
+    [self setButttonsFontSize:_oneButton size: size];
+    [self setButttonsFontSize: _twoButton size: size];
+    [self setButttonsFontSize: _threeButton size: size];
+    [self setButttonsFontSize: _fourButton size: size];
+    [self setButttonsFontSize:_fiveButton size: size];
+    [self setButttonsFontSize: _sixButton size: size];
+    [self setButttonsFontSize: _sevenButton size: size];
+    [self setButttonsFontSize: _eightButton size: size];
+    [self setButttonsFontSize:_nineButton size: size];
+    [self setButttonsFontSize: _starButton size: size * 1.1];
+    [self setButttonsFontSize: _zeroButton size: size];
+    [self setButttonsFontSize: _callButton size: size];
+    [self setButttonsFontSize: _swipeButton  size: size * 0.9];
+    [self setButttonsFontSize: _hashButton size: size];
+    
+    _addressField.font = [UIFont systemFontOfSize: _oneButton.frame.size.width / 5];
+    [self adjustLabelLabelsSize];
+   
+}
+
+-(void) adjustLabelLabelsSize {
+    CGFloat labelFontSize = _abcLabel.frame.size.width / 15;
+
+    _abcLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _defLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _ghiLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _jklLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _mnoLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _pqrsLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _tuvLabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _wxyzlabel.font = [UIFont systemFontOfSize:labelFontSize];
+    _plusLabel.font = [UIFont systemFontOfSize:labelFontSize * 1.3];
+}
+
+
+-(void) setButttonsFontSize:(UIButton*) button size:(CGFloat) size {
+    //CGFloat size = button.frame.size.width / 5;
+    [button.titleLabel setFont: [button.titleLabel.font fontWithSize: size]];
+}
+
+
 
 #pragma mark -
 

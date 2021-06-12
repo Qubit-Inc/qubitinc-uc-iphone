@@ -85,10 +85,5 @@
 - (void)setAddress:(NSString *)address;
 
 - (IBAction)onCallButtonClick:(UIButton *)sender;
-
-
 @property (weak, nonatomic) IBOutlet UIButton *swipeButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *swipeButtonAction;
-
 @end
