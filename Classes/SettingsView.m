@@ -165,6 +165,26 @@
             [self.settingsStore setBool:NO forKey:[toggle key]];
         }
     }
+    
+    
+    if([[toggle key] isEqualToString:@"start_video_preference"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:toggle.isOn forKey:@"startVideoPreference"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [NSNotificationCenter.defaultCenter
+         postNotificationName:@"startVideoPreference"
+         object:[toggle key]
+         userInfo:nil];
+        
+    }
+    
+    if([[toggle key] isEqualToString:@"accept_video_preference"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:toggle.isOn forKey:@"acceptVideoPreference"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    
     // Start notification after animation of DCRoundSwitch
     dispatch_async(dispatch_get_main_queue(), ^{
         [NSNotificationCenter.defaultCenter

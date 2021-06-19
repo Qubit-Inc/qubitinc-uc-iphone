@@ -62,12 +62,14 @@ static UICompositeViewDescription *compositeDescription = nil;
             [_zeroButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_swipeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_callButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_videoCallButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_hashButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [_starButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             _numberView.backgroundColor = [UIColor blackColor];
             _swipeButton.backgroundColor = [UIColor blackColor];
             _addContactButton.backgroundColor = [UIColor blackColor];
             _callButton.backgroundColor = [UIColor blackColor];
+            _videoCallButton.backgroundColor = [UIColor blackColor];
             
             UIColor *textColor = [UIColor whiteColor];
             [_lbl2 setTextColor: textColor];
@@ -103,11 +105,13 @@ static UICompositeViewDescription *compositeDescription = nil;
             [_swipeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_hashButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_callButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_videoCallButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_starButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             
             _swipeButton.backgroundColor = [UIColor whiteColor];
             _addContactButton.backgroundColor = [UIColor whiteColor];
             _callButton.backgroundColor = [UIColor whiteColor];
+            _videoCallButton.backgroundColor = [UIColor whiteColor];
             
             UIColor *textColor = [UIColor blackColor];
             [_lbl2 setTextColor: textColor];
@@ -152,6 +156,7 @@ static UICompositeViewDescription *compositeDescription = nil;
     [self setButttonsFontSize: _starButton size: size * 1.3];
     [self setButttonsFontSize: _zeroButton size: size];
     [self setButttonsFontSize: _callButton size: size];
+    [self setButttonsFontSize: _videoCallButton size: size];
     [self setButttonsFontSize: _swipeButton size: size * 0.9];
     [self setButttonsFontSize: _hashButton size: size];
     
@@ -333,7 +338,33 @@ static UICompositeViewDescription *compositeDescription = nil;
                                            selector:@selector(darkmodeApplication)
                                                name:@"applicationDidBecomeActive"
                                              object:nil];
+    
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(onstartVideoPreferenceUpdated:)
+                                               name: @"startVideoPreference"
+                                             object:nil];
+//    [NSNotificationCenter.defaultCenter addObserver:self
+//                                           selector:@selector(onDNDCallForwardOptionChanged:)
+//                                               name: @"accept_video_preference"
+//                                             object:nil];
+    
 }
+
+- (void)onstartVideoPreferenceUpdated:(NSNotification *)notif {
+    NSLog(@" onstartVideoPreferenceUpdated" );
+    [self updateCallButton];
+}
+
+- (void) updateCallButton {
+    BOOL showVideoIcon = [[NSUserDefaults standardUserDefaults] boolForKey:@"startVideoPreference"] ?: FALSE;
+    
+    NSLog(@"SHow Video icon %@", showVideoIcon ? @"True" : @"False");
+    
+    [_videoCallButton setHidden:!showVideoIcon];
+    [_callButton setHidden: showVideoIcon];
+        
+}
+
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 										 duration:(NSTimeInterval)duration {
@@ -373,6 +404,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[LinphoneManager.instance shouldPresentLinkPopup];
     LinphoneAppDelegate* sharedDelegate = [LinphoneAppDelegate appDelegate];
     [sharedDelegate getUserStatus:FALSE];
+    
+    [self updateCallButton];
 }
 
 #pragma mark - Event Functions

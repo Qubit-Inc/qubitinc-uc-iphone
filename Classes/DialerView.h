@@ -43,6 +43,8 @@
 @property(nonatomic, strong) IBOutlet UITextField *addressField;
 @property(nonatomic, strong) IBOutlet UIButton *addContactButton;
 @property(nonatomic, strong) IBOutlet UICallButton *callButton;
+@property (weak, nonatomic) IBOutlet UICallButton *videoCallButton;
+
 @property(nonatomic, strong) IBOutlet UIButton *backButton;
 @property(weak, nonatomic) IBOutlet UIButton *backspaceButton;
 

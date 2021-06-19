@@ -40,6 +40,7 @@
                 <outlet property="swipeButton" destination="z3m-ZR-bxw" id="7tO-BZ-X89"/>
                 <outlet property="threeButton" destination="29" id="193"/>
                 <outlet property="twoButton" destination="37" id="192"/>
+                <outlet property="videoCallButton" destination="WTc-WJ-Gg2" id="pQO-7H-hGP"/>
                 <outlet property="view" destination="171" id="176"/>
                 <outlet property="zeroButton" destination="40" id="198"/>
             </connections>
@@ -404,6 +405,61 @@
                                     <connections>
                                         <action selector="onCallButtonClick:" destination="-1" eventType="touchUpInside" id="SMq-Xv-3aH"/>
                                         <outlet property="addressField" destination="4" id="235"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="57" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTc-WJ-Gg2" userLabel="videoCallButton" customClass="UICallButton">
+                                    <rect key="frame" x="160" y="0.0" width="160" height="66"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Call"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.97647058823529409" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="34" name="MaterialIcons-Regular"/>
+                                                    <real key="NSKern" value="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <real key="NSStrokeWidth" value="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <state key="disabled">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.5607843137254902" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="34" name="MaterialIcons-Regular"/>
+                                                    <real key="NSKern" value="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <state key="highlighted">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.5607843137254902" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="34" name="MaterialIcons-Regular"/>
+                                                    <real key="NSKern" value="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="24" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="onCallButtonClick:" destination="-1" eventType="touchUpInside" id="Nmz-dx-Sz2"/>
+                                        <outlet property="addressField" destination="4" id="FEZ-Fv-3Hw"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="z3m-ZR-bxw" userLabel="Swipe">
