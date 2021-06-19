@@ -254,8 +254,8 @@ static UICompositeViewDescription *compositeDescription = nil;
     }
     else {
         //[view setCallLogId: @""];
-        //ContactDetailsView *view = VIEW(ContactDetailsView);
-        ContactDetailsView* view =[[ContactDetailsView alloc] initWithNibName:@"ContactDetailsView" bundle:nil];
+        ContactDetailsView *view = VIEW(ContactDetailsView);
+//        ContactDetailsView* view =[[ContactDetailsView alloc] initWithNibName:@"ContactDetailsView" bundle:nil];
         
         CNContact *cnContact = [[CNContact alloc] init];
         Contact* contact = [[Contact alloc] initWithCNContact:cnContact];
