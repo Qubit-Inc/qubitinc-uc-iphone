@@ -248,6 +248,9 @@ static UICompositeViewDescription *compositeDescription = nil;
             NSAttributedString *numpadAttrStr = [[NSAttributedString alloc] initWithString:_numpadButton.titleLabel.text  attributes:attributes];
             [_numpadButton setAttributedTitle:numpadAttrStr forState:UIControlStateNormal];
             
+            //[_numpadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
+            
         }
         else {
             [_chatButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -294,6 +297,9 @@ static UICompositeViewDescription *compositeDescription = nil;
             [_zeroButton setTitleColor:textColor forState:UIControlStateNormal];
             [_starButton setTitleColor:textColor forState:UIControlStateNormal];
             [_hashButton setTitleColor:textColor forState:UIControlStateNormal];
+            
+            [_numpadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
             
         }
         
